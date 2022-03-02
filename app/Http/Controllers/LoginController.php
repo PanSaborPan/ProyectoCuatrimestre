@@ -14,6 +14,9 @@ class LoginController extends Controller
         return view('login.login');
     }
 
+    public function asda()
+    {
+    }
     //Verifica el inicio
     public function authLogin(Request $request)
     {
