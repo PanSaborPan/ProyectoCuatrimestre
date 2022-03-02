@@ -47,7 +47,6 @@ Route::put('/ModificarProveedor/{Proveedor}', [ProveedorController::class, 'upda
 Route::get('/BorrarProveedor/{id}', [ProveedorController::class, 'delete'])->name('proveedor.delete');
 //Acaba proveedor
 
-
 //Empieza clientes
 Route::get('/Clientes', [ClientesController::class, 'index']);
 Route::post('/Clientes', [ClientesController::class, 'create'])->name('cliente.create');
