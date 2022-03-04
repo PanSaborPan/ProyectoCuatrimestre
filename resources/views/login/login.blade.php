@@ -97,7 +97,7 @@
                             </label>
                         </div>-->
                         <div class="mb-20px">
-                            <button type="submit" class="btn btn-success d-block w-100 h-45px btn-lg">Sign me in</button>
+                            <button type="submit" class="btn btn-success d-block w-100 h-45px btn-lg">Iniciar Sesion</button>
                         </div>
                         <!--<div class="text-gray-500">
                             Not a member yet? Click <a href="javascript:;" class="text-white">here</a> to register.
