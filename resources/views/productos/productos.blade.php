@@ -216,8 +216,8 @@
                     <td style="display: none; background-color:yellow">{{$item->Cuenta_de_activo_de_inventario}}</td>
                     <td style="display: none; background-color:yellow">
 
-                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->SKU}}">Mod</button>
-                        <button class="id" id='Eliminar'  onclick="clickdelete(this,'{{$item->Existencias_actuales}}')" value="{{$item->SKU}}">Borrar</button>
+                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->SKU}}"><img src="plugins/bootstrap-icons/icons/pencil-fill.svg"/></button>
+                        <button class="id" id='Eliminar'  onclick="clickdelete(this,'{{$item->Existencias_actuales}}')" value="{{$item->SKU}}"><img src="plugins/bootstrap-icons/icons/trash-fill.svg"/></button>
 
                     </td>
 
@@ -238,8 +238,8 @@
 
 
 
-                            <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->SKU}}">Mod</button>
-                            <button class="id" id='Eliminar' onclick='clickdelete(this,"{{$item->Existencias_actuales}}")' value="{{$item->SKU}}">Borrar</button>
+                            <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->SKU}}"><img src="plugins/bootstrap-icons/icons/pencil-fill.svg"/></button>
+                            <button class="id" id='Eliminar' onclick='clickdelete(this,"{{$item->Existencias_actuales}}")' value="{{$item->SKU}}"><img src="plugins/bootstrap-icons/icons/trash-fill.svg"/></button>
 
                         </td>
 

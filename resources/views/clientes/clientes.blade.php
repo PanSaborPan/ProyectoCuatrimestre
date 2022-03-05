@@ -219,8 +219,8 @@
 
 
 
-                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}">Modificar</button>
-                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}">Borrar</button>
+                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><img src="plugins/bootstrap-icons/icons/pencil-fill.svg"/></button>
+                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><img src="plugins/bootstrap-icons/icons/trash-fill.svg"/></button>
 
                     </td>
 
