@@ -6,3 +6,9 @@
 @endsection
 
 @section('title', 'Welcome')
+
+
+@section('container')
+@parent
+
+@endsection
