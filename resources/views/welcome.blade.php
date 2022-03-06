@@ -10,53 +10,7 @@
 
 @endsection
 
-@section('script')
-@parent
-<script src="{{asset('plugins/datatables.net/js/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('plugins/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
-<script src="{{asset('plugins/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
 
-
-
-
-<script>
-    $(document).ready(function() {
-        $('#data-table-default').DataTable({
-            responsive: true
-        });
-    });
-</script>
-<script>
-    $(document).ready(function() {
-        $('#data-table-default2').DataTable({
-            responsive: true
-        });
-    });
-</script>
-<script>
-    $(document).ready(function() {
-        $('#data-table-default3').DataTable({
-            responsive: true
-        });
-    });
-</script>
-<script>
-    $(document).ready(function() {
-        $('#data-table-default4').DataTable({
-            responsive: true
-        });
-    });
-</script>
-<script>
-    $(document).ready(function() {
-        $('#data-table-default5').DataTable({
-            responsive: true
-        });
-    });
-</script>
-
-@endsection
 
 
 
@@ -396,5 +350,50 @@
 
 @endsection
 
-
+@section('script')
 @parent
+<script src="{{asset('plugins/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('plugins/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('plugins/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        $('#data-table-default').DataTable({
+            responsive: true
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#data-table-default2').DataTable({
+            responsive: true
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#data-table-default3').DataTable({
+            responsive: true
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#data-table-default4').DataTable({
+            responsive: true
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#data-table-default5').DataTable({
+            responsive: true
+        });
+    });
+</script>
+
+@endsection
