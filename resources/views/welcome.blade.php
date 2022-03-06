@@ -70,7 +70,7 @@ $(document).ready(function() {
 			<div class="panel-heading">
 				<h4 class="panel-title">tabla de productos</h4>
 				<div class="panel-heading-btn">
-					<a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+					
 					<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
 					<a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
 				</div>
@@ -158,7 +158,7 @@ $(document).ready(function() {
 			<div class="panel-heading">
 				<h4 class="panel-title">tabla de cliente</h4>
 				<div class="panel-heading-btn">
-					<a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+					
 					<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
 					<a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
 				</div>
@@ -232,7 +232,7 @@ $(document).ready(function() {
 			<div class="panel-heading">
 				<h4 class="panel-title">tabla de provedor</h4>
 				<div class="panel-heading-btn">
-					<a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+					
 					<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
 					<a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
 				</div>
@@ -300,7 +300,6 @@ $(document).ready(function() {
 			<div class="panel-heading">
 				<h4 class="panel-title">tabla de ventas</h4>
 				<div class="panel-heading-btn">
-					<a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
 					<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
 					<a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
 				</div>
@@ -411,7 +410,11 @@ $(document).ready(function() {
 		</div>-->
     
 		<!-- END pane5 -->
-
+        
+            <div id="footer" class="app-footer m-0">
+                &copy; 2021 TNS Custom Bussiness All Right Reserved
+            </div>
+        
         </html>
         
 @endsection
