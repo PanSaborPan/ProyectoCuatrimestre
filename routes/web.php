@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\VentasController;
 use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\controlerwelcome;
 
 
 /*
@@ -25,9 +26,9 @@ Route::get('/', [LoginController::class, 'showloginform'])->name('home');
 
 Route::get('/login', [LoginController::class, 'authLogin'])->name('login');
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+Route::get('/welcome', [controlerwelcome::class, 'welco']);
+
+
 
 
 //Empieza modulo usuarios
@@ -46,7 +47,6 @@ Route::get('/ModificarProveedor/{id}/edit', [ProveedorController::class, 'edit']
 Route::put('/ModificarProveedor/{Proveedor}', [ProveedorController::class, 'update'])->name('proveedor.update');
 Route::get('/BorrarProveedor/{id}', [ProveedorController::class, 'delete'])->name('proveedor.delete');
 //Acaba proveedor
-
 
 //Empieza clientes
 Route::get('/Clientes', [ClientesController::class, 'index']);

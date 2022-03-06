@@ -15,6 +15,9 @@ class LoginController extends Controller
     }
 
 
+
+
+
     //Verifica el inicio
     public function authLogin(Request $request)
     {

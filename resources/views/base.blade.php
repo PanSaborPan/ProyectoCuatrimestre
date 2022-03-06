@@ -27,23 +27,23 @@
 
 <script>
     function usuarios() {
-        $("#contenido").load("{{ url('/Usuarios') }}");
+        $("#content-top").load("{{ url('/Usuarios') }}");
     };
 
     function proveedor() {
-        $("#contenido").load("{{ url('/Proveedor') }}");
+        $("#content-top").load("{{ url('/Proveedor') }}");
     };
 
     function clientes() {
-        $("#contenido").load("{{ url('/Clientes') }}");
+        $("#content-top").load("{{ url('/Clientes') }}");
     };
 
     function ventas() {
-        $("#contenido").load("{{ url('/Ventas') }}");
+        $("#content-top").load("{{ url('/Ventas') }}");
     };
 
     function productos() {
-        $("#contenido").load("{{ url('/Productos') }}");
+        $("#content-top").load("{{ url('/Productos') }}");
     };
 </script>
 
@@ -175,17 +175,16 @@
 
     <div id="content-top" class="app-content mt-2">
         @section('container')
-        <div id='contenido'>
 
-        </div>
         @show
 
-        <footer>
-            <div id="footer" class="app-footer m-0">
-                &copy; 2021 TNS Custom Bussiness All Right Reserved
-            </div>
-        </footer>
+
     </div>
+    <footer>
+        <div id="footer" class="app-footer m-0">
+            &copy; 2021 TNS Custom Bussiness All Right Reserved
+        </div>
+    </footer>
     @else
     <script>
         window.location = "{{ route('home') }}";

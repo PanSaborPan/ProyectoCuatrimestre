@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\DB;
+use PhpParser\Node\Expr\FuncCall;
 
 class UsuarioController extends Controller
 {
@@ -12,6 +13,11 @@ class UsuarioController extends Controller
     {
         $usuarios = Usuario::all();
 
+        return view('usuario.usuarios', compact('usuarios'));
+    }
+
+    public function forumlario()
+    {
         return view('usuario.usuarios', compact('usuarios'));
     }
 
