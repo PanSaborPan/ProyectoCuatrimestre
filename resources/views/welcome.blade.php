@@ -17,13 +17,9 @@
 @section('title', 'Welcome')
 
 @section('container')
-
-
-
-
 <html>
 <!-- BEGIN row -->
-<div class="row">
+<div class="contenido">
     <!-- BEGIN col-8 -->
     <div class="col-xl-13 ">
         <!-- BEGIN panel -->
