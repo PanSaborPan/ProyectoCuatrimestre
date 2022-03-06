@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\VentasController;
 use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\controlerwelcome;
 
 
 /*
@@ -25,9 +26,9 @@ Route::get('/', [LoginController::class, 'showloginform'])->name('home');
 
 Route::get('/login', [LoginController::class, 'authLogin'])->name('login');
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+Route::get('/welcome', [controlerwelcome::class, 'welco']);
+
+
 
 
 //Empieza modulo usuarios
