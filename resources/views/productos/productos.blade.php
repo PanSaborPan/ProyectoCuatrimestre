@@ -91,6 +91,13 @@
     };
 </script>
 
+<script>
+    function showformP() {
+
+        var url = '{{ route("producto.forms") }}';
+        $("#div").load(url);
+    };
+</script>
 
 <script type="text/javascript">
     $('#from1').on('submit', function(e) {
@@ -143,45 +150,20 @@
     @if(Session::has('users.Usuario'))
 
     <div id="div">
-
-        <h1>Captura de Productos</h1>
-        <form id="from1">
-
-            @csrf
-            <span class="badge bg-danger rounded-pill">Rojo:para poder borrar o bajos de stock</span>
-            <label class="form-label">Nombre del producto</label>
-            <input class="form-control" id="Nombre_del_producto" type="text" placeholder="Nombre del producto" />
-            <label class="form-label">Descriptcion del producto</label>
-            <textarea class="form-control" id="Descripcion_del_producto" placeholder="Descrpcion del producto"></textarea>
-            <label class="form-label">Clave del sat</label>
-            <input type="number" id="Clave_del_sat" class="form-control mb-5px" placeholder="Clave SAT" />
-            <label class="form-label">Clave de unidad</label>
-            <input type="text" id="Clave_de_unidad" class="form-control" placeholder="Clave de unidad" />
-            <label class="form-label">Tipo</label>
-            <input type="text" id="Tipo" class="form-control" placeholder="Tipo" />
-            <label class="form-label">Precio unitario</label>
-            <input type="number" id="Precio_unitario" class="form-control" placeholder="Precio por unidad" />
-            <label class="form-label">Existencias actuales</label>
-            <input type="number" id="Existencias_actuales" class="form-control" placeholder="Existencias" />
-            <label class="form-label">Puntos de reabastecimiento</label>
-            <input type="number" id="Punto_de_reabastecimiento" class="form-control" placeholder="Puntos de reabastecimiento" />
-            <label class="form-label">Cuenta de activo de inventario</label>
-            <input type="number" id="Cuenta_de_activo_de_inventario" class="form-control" placeholder="Cuenta de activo de inventario" />
-            <br>
-            <br>
-            <button id="subir" type="submit" class="btn btn-primary">Crear nuevo producto</button>
-        </form>
+    {{-- Boton para mandar a formulario de Productos --}}
+    <div class="panel panel-inverse" data-sortable-id="table-basic-7">
+    <div class="panel-heading">
+            <h3 class="panel-title">Tabla de productos actuales</h3>
 
 
-        <br>
-        <br>
+            <div class="panel-heading-btn">
+                <a onclick="showform()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+            </div>
 
-
-
-
-        <h1>Tabla de productos actuales</h1>
-
-
+            </div>
+    
+        <div class="panel-body">
+            <div class="table-responsive">
         <table id="data-table-default" class="table table-bordered align-middle">
             <thead>
                 <tr>
@@ -248,7 +230,9 @@
                     @endif
                     @endforeach
         </table>
-
+        </div>
+        </div>
+        </div>
     </div>
     @else
     <script>

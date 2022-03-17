@@ -61,6 +61,13 @@
     };
 </script>
 
+<script>
+    function showform() {
+
+        var url = '{{ route("user.forms") }}';
+        $("#div").load(url);
+    };
+</script>
 
 <script type="text/javascript">
     $('#from1').on('submit', function(e) {
@@ -103,33 +110,22 @@
 
     <div id="div">
 
-        <h1>Captura de usuarios</h1>
-        <form id="from1">
-
-            @csrf
-
-            <label class="form-label">Nombre</label>
-            <input class="form-control" id="nombre" type="text" placeholder="Nombre" />
-            <label class="form-label">Area</label>
-            <input class="form-control" id="area" type="text" placeholder="Area" />
-            <label class="form-label">Usuario</label>
-            <input type="text" id="usuario" class="form-control mb-5px" placeholder="Usuario" />
-            <label class="form-label">Contraseña</label>
-            <input type="password" id="password" class="form-control" placeholder="Contraseña" />
-            <br>
-            <button id="subir" type="submit" class="btn btn-primary">Crear nuevo usuario</button>
-        </form>
+    {{-- Boton para mandar a formulario de Usuarios --}}
+    
+    <div class="panel panel-inverse" data-sortable-id="table-basic-7">
+    <div class="panel-heading">
+            <h3 class="panel-title">Tabla de usuarios actuales</h3>
 
 
-        <br>
-        <br>
+            <div class="panel-heading-btn">
+                <a onclick="showform()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+            </div>
 
+            </div>
 
-
-
-        <h1>Tabla de usuarios actuales</h1>
-
-
+    
+            <div class="panel-body">
+            <div class="table-responsive">
         <table id="data-table-default" class="table table-striped table-bordered align-middle">
             <thead>
                 <tr>
@@ -160,10 +156,11 @@
                         <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_usuario}}">Borrar</button>
 
                     </td>
-
+                    </div>
+                    </div>
                 </tr>
                 @endforeach
         </table>
-
+        </div>
     </div>
 </body>
