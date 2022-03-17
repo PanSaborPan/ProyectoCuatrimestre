@@ -61,6 +61,14 @@
     };
 </script>
 
+<script>
+    function showformV() {
+
+        var url = '{{ route("ventas.forms") }}';
+        $("#div").load(url);
+    };
+</script>
+
 
 <script type="text/javascript">
     $('#from1').on('submit', function(e) {
@@ -106,34 +114,21 @@
 <body>
 
     <div id="div">
-
-        <h1>Captura de ventas</h1>
-        <form id="from1">
-
-            @csrf
-
-            <label class="form-label">Cliente</label>
-            <input class="form-control" id="cliente" type="text" placeholder="Cliente" />
-            <label class="form-label">Producto</label>
-            <input class="form-control" id="producto" type="text" placeholder="Producto" />
-            <label class="form-label">Descripcion</label>
-            <textarea id="descripcion" class="form-control mb-5px" placeholder="Descripcion"></textarea>
-            <label class="form-label">Cantidad</label>
-            <input type="number" id="cantidad" class="form-control" placeholder="Cantidad" />
-            <label class="form-label">Precio por unidad</label>
-            <input type="number" class="form-control" step="0.01" id="precio_unitario" placeholder="Precio_Unitario" />
-            <br>
-            <button id="subir" type="submit" class="btn btn-primary">Crear nueva venta</button>
-        </form>
+    {{-- Boton para mandar a formulario de Ventas --}}
+    <div class="panel panel-inverse" data-sortable-id="table-basic-7">
+    <div class="panel-heading">
+            <h3 class="panel-title">Tabla de ventas actuales</h3>
 
 
-        <br>
-        <br>
+            <div class="panel-heading-btn">
+                <a onclick="showformV()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+            </div>
 
-
-
-
-        <h1>Tabla de ventas actuales</h1>
+            </div>
+    
+        <div class="panel-body">
+            <div class="table-responsive">
+       
 
 
         <table id="data-table-default" class="table table-striped table-bordered align-middle">
@@ -178,6 +173,7 @@
                 </tr>
                 @endforeach
         </table>
-
+        </div> 
+     </div>
     </div>
 </body>

@@ -14,7 +14,11 @@ class ClientesController extends Controller
 
         return view('clientes.clientes', compact('clientes'));
     }
-
+// Funcion para la vista de formulario de Usuarios
+public function formularioclientes()
+{
+    return view('clientes.FormularioClientes');
+}
 
     public function create(Request $request)
     {
