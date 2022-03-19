@@ -114,66 +114,66 @@
 <body>
 
     <div id="div">
-    {{-- Boton para mandar a formulario de Ventas --}}
-    <div class="panel panel-inverse" data-sortable-id="table-basic-7">
-    <div class="panel-heading">
-            <h3 class="panel-title">Tabla de ventas actuales</h3>
+        {{-- Boton para mandar a formulario de Ventas --}}
+        <div class="panel panel-inverse" data-sortable-id="table-basic-7">
+            <div class="panel-heading">
+                <h3 class="panel-title">Tabla de ventas actuales</h3>
 
 
-            <div class="panel-heading-btn">
-                <a onclick="showformV()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+                <div class="panel-heading-btn">
+                    <a onclick="showformV()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+                </div>
+
             </div>
 
+            <div class="panel-body">
+                <div class="table-responsive">
+
+
+
+                    <table id="data-table-default" class="table table-striped table-bordered align-middle">
+                        <thead>
+                            <tr>
+                                <th width="1%" data-orderable="false">Folio</th>
+                                <th width="1%" data-orderable="false">Cliente</th>
+                                <th width="1%" data-orderable="false">Producto</th>
+                                <th width="1%" data-orderable="false">Descripcion</th>
+                                <th width="1%" data-orderable="false">Cantidad</th>
+                                <th width="1%" data-orderable="false">Precio_Unitario</th>
+                                <th width="1%" data-orderable="false">Iva</th>
+                                <th width="1%" data-orderable="false">Sub_Total</th>
+                                <th width="1%" data-orderable="false">Total</th>
+                                <th width="1%" data-orderable="false">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                            @foreach($ventas as $item)
+                            <tr class="fradeX odd">
+
+                                <td style="display: none;">{{$item->Folio}}</td>
+                                <td style="display: none;">{{$item->Cliente}}</td>
+                                <td style="display: none;">{{$item->Producto}}</td>
+                                <td style="display: none;">{{$item->Descripcion}}</td>
+                                <td style="display: none;">{{$item->Cantidad}}</td>
+                                <td style="display: none;">{{$item->Precio_Unitario}}</td>
+                                <td style="display: none;">{{$item->Iva}}</td>
+                                <td style="display: none;">{{$item->Sub_Total}}</td>
+                                <td style="display: none;">{{$item->Total}}</td>
+                                <td style="display: none;">
+
+
+
+                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+
+                                </td>
+
+                            </tr>
+                            @endforeach
+                    </table>
+                </div>
             </div>
-    
-        <div class="panel-body">
-            <div class="table-responsive">
-       
-
-
-        <table id="data-table-default" class="table table-striped table-bordered align-middle">
-            <thead>
-                <tr>
-                    <th width="1%" data-orderable="false">Folio</th>
-                    <th width="1%" data-orderable="false">Cliente</th>
-                    <th width="1%" data-orderable="false">Producto</th>
-                    <th width="1%" data-orderable="false">Descripcion</th>
-                    <th width="1%" data-orderable="false">Cantidad</th>
-                    <th width="1%" data-orderable="false">Precio_Unitario</th>
-                    <th width="1%" data-orderable="false">Iva</th>
-                    <th width="1%" data-orderable="false">Sub_Total</th>
-                    <th width="1%" data-orderable="false">Total</th>
-                    <th width="1%" data-orderable="false">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-
-
-                @foreach($ventas as $item)
-                <tr class="fradeX odd">
-
-                    <td style="display: none;">{{$item->Folio}}</td>
-                    <td style="display: none;">{{$item->Cliente}}</td>
-                    <td style="display: none;">{{$item->Producto}}</td>
-                    <td style="display: none;">{{$item->Descripcion}}</td>
-                    <td style="display: none;">{{$item->Cantidad}}</td>
-                    <td style="display: none;">{{$item->Precio_Unitario}}</td>
-                    <td style="display: none;">{{$item->Iva}}</td>
-                    <td style="display: none;">{{$item->Sub_Total}}</td>
-                    <td style="display: none;">{{$item->Total}}</td>
-                    <td style="display: none;">
-
-
-
-                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
-                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
-
-                    </td>
-
-                </tr>
-                @endforeach
-        </table>
-        </div> 
-     </div>
-    </div>
+        </div>
 </body>

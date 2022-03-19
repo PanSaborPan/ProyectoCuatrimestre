@@ -131,83 +131,85 @@
 
     <div id="div">
 
-    {{-- Boton para mandar a formulario de Clientes --}}
-    <div class="panel panel-inverse" data-sortable-id="table-basic-7">
-    <div class="panel-heading">
-            <h3 class="panel-title">Tabla de Clientes actuales</h3>
+
+        {{-- Boton para mandar a formulario de Clientes --}}
+        <div class="panel panel-inverse" data-sortable-id="table-basic-7">
+            <div class="panel-heading">
+                <h3 class="panel-title">Tabla de Clientes actuales</h3>
 
 
-            <div class="panel-heading-btn">
-                <a onclick="showform()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+                <div class="panel-heading-btn">
+                    <a onclick="showform()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+                </div>
+
             </div>
 
+            <div class="panel-body">
+                <div class="table-responsive">
+
+
+
+                    <table id="data-table-default" class="table table-striped table-bordered align-middle">
+                        <thead>
+                            <tr>
+                                <th width="1%">id</th>
+                                <th width="1%">Nombre</th>
+                                <th width="1%">Empresa</th>
+                                <th width="1%">Razon social</th>
+                                <th width="1%">RFC</th>
+                                <th width="1%">Telefono</th>
+                                <th width="1%">Movil</th>
+                                <th width="1%">Correo electronico 1</th>
+                                <th width="1%">Correo electronico 2</th>
+                                <th width="1%">Calle</th>
+                                <th width="1%">Numero</th>
+                                <th width="1%">Codigo postal</th>
+                                <th width="1%">Ciudad</th>
+                                <th width="1%">Estado</th>
+                                <th width="1%">Pais</th>
+                                <th width="1%">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                            @foreach($clientes as $item)
+                            <tr class="fradeX odd">
+
+                                <td style="display: none;">{{$item->Id_cliente}}</td>
+                                <td style="display: none;">{{$item->Nombre_de_contacto}}</td>
+                                <td style="display: none;">{{$item->Nombre_de_empresa}}</td>
+                                <td style="display: none;">{{$item->Razonsocial}}</td>
+                                <td style="display: none;">{{$item->Rfc}}</td>
+                                <td style="display: none;">{{$item->Telefono}}</td>
+                                <td style="display: none;">{{$item->Movil}}</td>
+                                <td style="display: none;">{{$item->Correo_electronico_1}}</td>
+                                <td style="display: none;">{{$item->Correo_electronico_2}}</td>
+                                <td style="display: none;">{{$item->Calle}}</td>
+                                <td style="display: none;">{{$item->Numero}}</td>
+                                <td style="display: none;">{{$item->Codigo_Postal}}</td>
+                                <td style="display: none;">{{$item->Ciudad}}</td>
+                                <td style="display: none;">{{$item->Estado}}</td>
+                                <td style="display: none;">{{$item->Pais}}</td>
+                                <td style="display: none;">
+
+
+
+                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+
+                                </td>
+
+                            </tr>
+                            @endforeach
+                    </table>
+                </div>
             </div>
-    
-        <div class="panel-body">
-            <div class="table-responsive">
-
-
-        <table id="data-table-default" class="table table-striped table-bordered align-middle">
-            <thead>
-                <tr>
-                    <th width="1%">id</th>
-                    <th width="1%">Nombre</th>
-                    <th width="1%">Empresa</th>
-                    <th width="1%">Razon social</th>
-                    <th width="1%">RFC</th>
-                    <th width="1%">Telefono</th>
-                    <th width="1%">Movil</th>
-                    <th width="1%">Correo electronico 1</th>
-                    <th width="1%">Correo electronico 2</th>
-                    <th width="1%">Calle</th>
-                    <th width="1%">Numero</th>
-                    <th width="1%">Codigo postal</th>
-                    <th width="1%">Ciudad</th>
-                    <th width="1%">Estado</th>
-                    <th width="1%">Pais</th>
-                    <th width="1%">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-
-
-                @foreach($clientes as $item)
-                <tr class="fradeX odd">
-
-                    <td style="display: none;">{{$item->Id_cliente}}</td>
-                    <td style="display: none;">{{$item->Nombre_de_contacto}}</td>
-                    <td style="display: none;">{{$item->Nombre_de_empresa}}</td>
-                    <td style="display: none;">{{$item->Razonsocial}}</td>
-                    <td style="display: none;">{{$item->Rfc}}</td>
-                    <td style="display: none;">{{$item->Telefono}}</td>
-                    <td style="display: none;">{{$item->Movil}}</td>
-                    <td style="display: none;">{{$item->Correo_electronico_1}}</td>
-                    <td style="display: none;">{{$item->Correo_electronico_2}}</td>
-                    <td style="display: none;">{{$item->Calle}}</td>
-                    <td style="display: none;">{{$item->Numero}}</td>
-                    <td style="display: none;">{{$item->Codigo_Postal}}</td>
-                    <td style="display: none;">{{$item->Ciudad}}</td>
-                    <td style="display: none;">{{$item->Estado}}</td>
-                    <td style="display: none;">{{$item->Pais}}</td>
-                    <td style="display: none;">
-
-
-
-                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
-                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
-
-                    </td>
-
-                </tr>
-                @endforeach
-        </table>
-        </div> 
-     </div>
-    </div>
-    @else
-    <script>
-        window.location = "{{ route('home') }}";
-        alert('no has iniciado session');
-    </script>
-    @endif
+        </div>
+        @else
+        <script>
+            window.location = "{{ route('home') }}";
+            alert('no has iniciado session');
+        </script>
+        @endif
 </body>

@@ -26,8 +26,8 @@
 
 
 <script>
-
     function usuarios() {
+
         $("#content-top").load("{{ url('/Usuarios') }}");
     };
 
@@ -66,7 +66,7 @@
         <span class="spinner"></span>
     </div>
 
-        <div id="app" class="app app-header-fixed app-sidebar-fixed">
+    <div id="app" class="app app-header-fixed app-sidebar-fixed">
 
 
         <!-- [fin]header -->
@@ -94,11 +94,11 @@
             <!-- END navbar-header -->
 
             <!-- BEGIN header-nav -->
-            
+
 
             <div class="navbar-nav">
 
-                
+
 
                 <div class="navbar-item navbar-user dropdown">
                     <a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
@@ -128,7 +128,7 @@
             <div class="app-sidebar-content" data-scrollbar="true" data-height="100%">
                 <div class="menu">
                     <div class="menu-profile">
-                    <a href="javascript:;" class="menu-profile-link" data-toggle="app-sidebar-profile" data-target="#appSidebarProfileMenu">
+
                         <div class="menu-profile-cover with-shadow"></div>
                         <div class="menu-profile-image">
                             <img src="{{ asset('img/login-bg/teri.jpg') }}" alt="" />
@@ -136,19 +136,20 @@
                         <div class="menu-profile-info">
                             <div class="d-flex align-items-center">
                                 <div class="flex-grow-1">
-                                    <div> 
+                                    <div>
                                         {{Session::get('users.Usuario')}}
                                     </div>
-                                
+
                                 </div>
-                                <div class="menu-caret ms-auto"></div>
+
                             </div>
                             <small></small>
 
                         </div>
-                        </a>
+
                     </div>
-                    <div id="appSidebarProfileMenu" class="collapse" >
+                    <div class="menu-header">Profile Settings</div>
+                    <div id="appSidebarProfileMenu">
                         <div class="menu-item pt-5px">
                             <a href="#" class="menu-link">
                                 <div class="menu-icon"><i class="fa fa-cog"></i></div>
@@ -162,7 +163,7 @@
                             </a>
                         </div>
                         <div class="menu-item pb-5px">
-                            <a href="" class="menu-link">
+                            <a href="#" class="menu-link">
                                 <div class="menu-icon"><i class="fa fa-question-circle"></i></div>
                                 <div class="menu-text"> Helps</div>
                             </a>
@@ -172,64 +173,64 @@
                     <div class="menu-header">Navigation</div>
 
                     <div class="menu-item ">
-                        <a href="#" class="menu-link">
+                        <a href="{{ url('/welcome') }}" class="menu-link">
                             <div class="menu-icon">
                                 <i class="fa fa-home"></i>
                             </div>
                             <div class="menu-text">Dashboard</div>
                         </a>
                         <div class="menu-item ">
-                        <a onclick="clientes()" class="menu-link">
-                            <div class="menu-icon">
-                                <i class="fa fa-address-book"></i>
-                            </div>
-                            <div class="menu-text">Clientes</div>
-                        </a>
+                            <a onclick="clientes()" class="menu-link">
+                                <div class="menu-icon">
+                                    <i class="fa fa-address-book"></i>
+                                </div>
+                                <div class="menu-text">Clientes</div>
+                            </a>
 
-                    </div>
-                    <div class="menu-item ">
-                        <a onclick="productos()" class="menu-link">
-                            <div class="menu-icon">
-                            <i class="fa fa-archive" aria-hidden="true"></i>
-                            </div>
-                            <div class="menu-text">Productos</div>
-                        </a>
+                        </div>
+                        <div class="menu-item ">
+                            <a onclick="productos()" class="menu-link">
+                                <div class="menu-icon">
+                                    <i class="fa fa-archive" aria-hidden="true"></i>
+                                </div>
+                                <div class="menu-text">Productos</div>
+                            </a>
 
-                    </div>
-                    <div class="menu-item ">
-                        <a onclick="proveedor()" class="menu-link">
-                            <div class="menu-icon">
-                                
-                            <i class="fa fa-id-card"></i>
-                            </div>
-                            <div class="menu-text">Proveedores</div>
-                        </a>
+                        </div>
+                        <div class="menu-item ">
+                            <a onclick="proveedor()" class="menu-link">
+                                <div class="menu-icon">
 
-                    </div>
-                    <div class="menu-item ">
-                        <a onclick="ventas()" class="menu-link">
-                            <div class="menu-icon">
-                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                    <i class="fa fa-id-card"></i>
+                                </div>
+                                <div class="menu-text">Proveedores</div>
+                            </a>
 
-                            </div>
-                            <div class="menu-text">Ventas</div>
-                        </a>
+                        </div>
+                        <div class="menu-item ">
+                            <a onclick="ventas()" class="menu-link">
+                                <div class="menu-icon">
+                                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
 
-                    </div>
-                    <div class="menu-item ">
-                        <a onclick="usuarios()" class="menu-link">
-                            <div class="menu-icon">
-                            <i class="fa fa-th-large fa-user"></i>
-                            </div>
-                            <div class="menu-text">Usuarios</div>
-                        </a>
+                                </div>
+                                <div class="menu-text">Ventas</div>
+                            </a>
 
-                    </div>
+                        </div>
+                        <div class="menu-item ">
+                            <a onclick="usuarios()" class="menu-link">
+                                <div class="menu-icon">
+                                    <i class="fa fa-th-large fa-user"></i>
+                                </div>
+                                <div class="menu-text">Usuarios</div>
+                            </a>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
 
         <!-- END #sidebar -->
 

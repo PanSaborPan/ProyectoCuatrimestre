@@ -10,9 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     @section('style')
+
+
+
     <link href="{{ asset('css/vendor.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/default/app.min.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+
     <link href="{{ asset('plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-fixedcolumns-bs4/css/fixedColumns.bootstrap4.min.css') }}" rel="stylesheet" />
@@ -126,73 +130,73 @@
     @if(Session::has('users.Usuario'))
     <div id="div">
 
-    {{-- Boton para mandar a formulario de Proveedores --}}
-    
-    <div class="panel panel-inverse" data-sortable-id="table-basic-7">
-    <div class="panel-heading">
-            <h3 class="panel-title">Tabla de proveedores actuales</h3>
+        {{-- Boton para mandar a formulario de Proveedores --}}
+
+        <div class="panel panel-inverse" data-sortable-id="table-basic-7">
+            <div class="panel-heading">
+                <h3 class="panel-title">Tabla de proveedores actuales</h3>
 
 
-            <div class="panel-heading-btn">
-                <a onclick="showform()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+                <div class="panel-heading-btn">
+                    <a onclick="showform()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+                </div>
+
             </div>
 
-            </div>
-        
-        
+
             <div class="panel-body">
-            <div class="table-responsive">
+                <div class="table-responsive">
 
-        <table id="data-table-default" class="table table-striped table-bordered align-middle">
-            <thead>
-                <tr>
-                    <th width="1%">id</th>
-                    <th width="1%">Nombre</th>
-                    <th width="1%">Compañia</th>
-                    <th width="1%">Correo</th>
-                    <th width="1%">Telefono</th>
-                    <th width="1%">Celular</th>
-                    <th width="1%">Calle</th>
-                    <th width="1%">Numero</th>
-                    <th width="1%">Ciudad</th>
-                    <th width="1%">Estado</th>
-                    <th width="1%">Pais</th>
-                    <th width="1%">Codigo postal</th>
-                    <th width="1%">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-
-
-                @foreach($proveedor as $item)
-                <tr class="fradeX odd">
-
-                    <td style="display: none;">{{$item->Id_proveedor}}</td>
-                    <td style="display: none;">{{$item->Nombre}}</td>
-                    <td style="display: none;">{{$item->Compañia}}</td>
-                    <td style="display: none;">{{$item->Correo}}</td>
-                    <td style="display: none;">{{$item->Telefono}}</td>
-                    <td style="display: none;">{{$item->Celular}}</td>
-                    <td style="display: none;">{{$item->Calle}}</td>
-                    <td style="display: none;">{{$item->Numero}}</td>
-                    <td style="display: none;">{{$item->Ciudad}}</td>
-                    <td style="display: none;">{{$item->Estado}}</td>
-                    <td style="display: none;">{{$item->Pais}}</td>
-                    <td style="display: none;">{{$item->Codigo_postal}}</td>
-                    <td style="display: none;">
+                    <table id="data-table-default" class="table table-striped table-bordered align-middle">
+                        <thead>
+                            <tr>
+                                <th width="1%">id</th>
+                                <th width="1%">Nombre</th>
+                                <th width="1%">Compañia</th>
+                                <th width="1%">Correo</th>
+                                <th width="1%">Telefono</th>
+                                <th width="1%">Celular</th>
+                                <th width="1%">Calle</th>
+                                <th width="1%">Numero</th>
+                                <th width="1%">Ciudad</th>
+                                <th width="1%">Estado</th>
+                                <th width="1%">Pais</th>
+                                <th width="1%">Codigo postal</th>
+                                <th width="1%">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
 
+                            @foreach($proveedor as $item)
+                            <tr class="fradeX odd">
 
-                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
-                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                <td style="display: none;">{{$item->Id_proveedor}}</td>
+                                <td style="display: none;">{{$item->Nombre}}</td>
+                                <td style="display: none;">{{$item->Compañia}}</td>
+                                <td style="display: none;">{{$item->Correo}}</td>
+                                <td style="display: none;">{{$item->Telefono}}</td>
+                                <td style="display: none;">{{$item->Celular}}</td>
+                                <td style="display: none;">{{$item->Calle}}</td>
+                                <td style="display: none;">{{$item->Numero}}</td>
+                                <td style="display: none;">{{$item->Ciudad}}</td>
+                                <td style="display: none;">{{$item->Estado}}</td>
+                                <td style="display: none;">{{$item->Pais}}</td>
+                                <td style="display: none;">{{$item->Codigo_postal}}</td>
+                                <td style="display: none;">
 
-                    </td>
 
-                </tr>
-                @endforeach
-        </table>
-        </div>
-        </div>
+
+                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+
+                                </td>
+
+                            </tr>
+                            @endforeach
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
     @else

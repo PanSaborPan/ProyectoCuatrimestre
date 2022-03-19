@@ -150,88 +150,88 @@
     @if(Session::has('users.Usuario'))
 
     <div id="div">
-    {{-- Boton para mandar a formulario de Productos --}}
-    <div class="panel panel-inverse" data-sortable-id="table-basic-7">
-    <div class="panel-heading">
-            <h3 class="panel-title">Tabla de productos actuales</h3>
+        {{-- Boton para mandar a formulario de Productos --}}
+        <div class="panel panel-inverse" data-sortable-id="table-basic-7">
+            <div class="panel-heading">
+                <h3 class="panel-title">Tabla de productos actuales</h3>
 
 
-            <div class="panel-heading-btn">
-                <a onclick="showform()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+                <div class="panel-heading-btn">
+                    <a onclick="showform()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+                </div>
+
             </div>
 
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table id="data-table-default" class="table table-bordered align-middle">
+                        <thead>
+                            <tr>
+                                <th width="1%">id</th>
+                                <th width="1%">Nombre del producto</th>
+                                <th width="1%">Descripcion del producto</th>
+                                <th width="1%">Clave del sat</th>
+                                <th width="1%">Clave de unidad</th>
+                                <th width="1%">Tipo</th>
+                                <th width="1%">Precio unitario</th>
+                                <th width="1%">Existencias actuales</th>
+                                <th width="1%">Punto de reabastecimiento</th>
+                                <th width="1%">Cuenta de activo de inventario</th>
+                                <th width="1%">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                            @foreach($productos as $item)
+                            @if($item->Existencias_actuales
+                            <= 100) <tr class="fradeX odd">
+                                <td style="display: none; background-color:yellow">{{$item->SKU}}</td>
+                                <td style="display: none; background-color:yellow">{{$item->Nombre_del_producto}}</td>
+                                <td style="display: none; background-color:yellow">{{$item->Descripcion_del_producto}}</td>
+                                <td style="display: none; background-color:yellow">{{$item->Clave_del_sat}}</td>
+                                <td style="display: none; background-color:yellow">{{$item->Clave_de_unidad}}</td>
+                                <td style="display: none; background-color:yellow">{{$item->Tipo}}</td>
+                                <td style="display: none; background-color:yellow">{{$item->Precio_unitario}}</td>
+                                <td id='cantidad' style="display: none; background-color:yellow">{{$item->Existencias_actuales}}</td>
+                                <td style="display: none; background-color:yellow">{{$item->Punto_de_reabastecimiento}}</td>
+                                <td style="display: none; background-color:yellow">{{$item->Cuenta_de_activo_de_inventario}}</td>
+                                <td style="display: none; background-color:yellow">
+
+                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+
+                                </td>
+
+                                </tr>
+                                @else
+                                <tr class="fradeX odd">
+                                    <td style="display: none;">{{$item->SKU}}</td>
+                                    <td style="display: none;">{{$item->Nombre_del_producto}}</td>
+                                    <td style="display: none;">{{$item->Descripcion_del_producto}}</td>
+                                    <td style="display: none;">{{$item->Clave_del_sat}}</td>
+                                    <td style="display: none;">{{$item->Clave_de_unidad}}</td>
+                                    <td style="display: none;">{{$item->Tipo}}</td>
+                                    <td style="display: none;">{{$item->Precio_unitario}}</td>
+                                    <td id='cantidad' style="display: none;">{{$item->Existencias_actuales}}</td>
+                                    <td style="display: none;">{{$item->Punto_de_reabastecimiento}}</td>
+                                    <td style="display: none;">{{$item->Cuenta_de_activo_de_inventario}}</td>
+                                    <td style="display: none;">
+
+
+
+                                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
+                                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+
+                                    </td>
+
+                                </tr>
+
+                                @endif
+                                @endforeach
+                    </table>
+                </div>
             </div>
-    
-        <div class="panel-body">
-            <div class="table-responsive">
-        <table id="data-table-default" class="table table-bordered align-middle">
-            <thead>
-                <tr>
-                    <th width="1%">id</th>
-                    <th width="1%">Nombre del producto</th>
-                    <th width="1%">Descripcion del producto</th>
-                    <th width="1%">Clave del sat</th>
-                    <th width="1%">Clave de unidad</th>
-                    <th width="1%">Tipo</th>
-                    <th width="1%">Precio unitario</th>
-                    <th width="1%">Existencias actuales</th>
-                    <th width="1%">Punto de reabastecimiento</th>
-                    <th width="1%">Cuenta de activo de inventario</th>
-                    <th width="1%">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-
-
-                @foreach($productos as $item)
-                @if($item->Existencias_actuales
-                <= 100) <tr class="fradeX odd">
-                    <td style="display: none; background-color:yellow">{{$item->SKU}}</td>
-                    <td style="display: none; background-color:yellow">{{$item->Nombre_del_producto}}</td>
-                    <td style="display: none; background-color:yellow">{{$item->Descripcion_del_producto}}</td>
-                    <td style="display: none; background-color:yellow">{{$item->Clave_del_sat}}</td>
-                    <td style="display: none; background-color:yellow">{{$item->Clave_de_unidad}}</td>
-                    <td style="display: none; background-color:yellow">{{$item->Tipo}}</td>
-                    <td style="display: none; background-color:yellow">{{$item->Precio_unitario}}</td>
-                    <td id='cantidad' style="display: none; background-color:yellow">{{$item->Existencias_actuales}}</td>
-                    <td style="display: none; background-color:yellow">{{$item->Punto_de_reabastecimiento}}</td>
-                    <td style="display: none; background-color:yellow">{{$item->Cuenta_de_activo_de_inventario}}</td>
-                    <td style="display: none; background-color:yellow">
-
-                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
-                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
-
-                    </td>
-
-                    </tr>
-                    @else
-                    <tr class="fradeX odd">
-                        <td style="display: none;">{{$item->SKU}}</td>
-                        <td style="display: none;">{{$item->Nombre_del_producto}}</td>
-                        <td style="display: none;">{{$item->Descripcion_del_producto}}</td>
-                        <td style="display: none;">{{$item->Clave_del_sat}}</td>
-                        <td style="display: none;">{{$item->Clave_de_unidad}}</td>
-                        <td style="display: none;">{{$item->Tipo}}</td>
-                        <td style="display: none;">{{$item->Precio_unitario}}</td>
-                        <td id='cantidad' style="display: none;">{{$item->Existencias_actuales}}</td>
-                        <td style="display: none;">{{$item->Punto_de_reabastecimiento}}</td>
-                        <td style="display: none;">{{$item->Cuenta_de_activo_de_inventario}}</td>
-                        <td style="display: none;">
-
-
-
-                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
-                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
-
-                        </td>
-
-                    </tr>
-
-                    @endif
-                    @endforeach
-        </table>
-        </div>
-        </div>
         </div>
     </div>
     @else

@@ -10,9 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     @section('style')
+
+
+
     <link href="{{ asset('css/vendor.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/default/app.min.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+
     <link href="{{ asset('plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-fixedcolumns-bs4/css/fixedColumns.bootstrap4.min.css') }}" rel="stylesheet" />
@@ -110,57 +114,57 @@
 
     <div id="div">
 
-    {{-- Boton para mandar a formulario de Usuarios --}}
-    
-    <div class="panel panel-inverse" data-sortable-id="table-basic-7">
-    <div class="panel-heading">
-            <h3 class="panel-title">Tabla de usuarios actuales</h3>
+        {{-- Boton para mandar a formulario de Usuarios --}}
+
+        <div class="panel panel-inverse" data-sortable-id="table-basic-7">
+            <div class="panel-heading">
+                <h3 class="panel-title">Tabla de usuarios actuales</h3>
 
 
-            <div class="panel-heading-btn">
-                <a onclick="showform()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+                <div class="panel-heading-btn">
+                    <a onclick="showform()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+                </div>
+
             </div>
 
-            </div>
 
-    
             <div class="panel-body">
-            <div class="table-responsive">
-        <table id="data-table-default" class="table table-striped table-bordered align-middle">
-            <thead>
-                <tr>
-                    <th width="1%">id</th>
-                    <th width="1%">Nombre</th>
-                    <th width="1%">Area</th>
-                    <th width="1%">Usuario</th>
-                    <th width="1%">Contraseña</th>
-                    <th width="1%">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
+                <div class="table-responsive">
+                    <table id="data-table-default" class="table table-striped table-bordered align-middle">
+                        <thead>
+                            <tr>
+                                <th width="1%">id</th>
+                                <th width="1%">Nombre</th>
+                                <th width="1%">Area</th>
+                                <th width="1%">Usuario</th>
+                                <th width="1%">Contraseña</th>
+                                <th width="1%">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
 
-                @foreach($usuarios as $item)
-                <tr class="fradeX odd">
+                            @foreach($usuarios as $item)
+                            <tr class="fradeX odd">
 
-                    <td style="display: none;">{{$item->Id_usuario}}</td>
-                    <td style="display: none;">{{$item->Nombre}}</td>
-                    <td style="display: none;">{{$item->Area}}</td>
-                    <td style="display: none;">{{$item->Usuario}}</td>
-                    <td style="display: none;">{{$item->Contraseña}}</td>
-                    <td style="display: none;">
+                                <td style="display: none;">{{$item->Id_usuario}}</td>
+                                <td style="display: none;">{{$item->Nombre}}</td>
+                                <td style="display: none;">{{$item->Area}}</td>
+                                <td style="display: none;">{{$item->Usuario}}</td>
+                                <td style="display: none;">{{$item->Contraseña}}</td>
+                                <td style="display: none;">
 
 
 
-                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
-                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
 
-                    </td>
-                    </div>
-                    </div>
-                </tr>
-                @endforeach
-        </table>
+                                </td>
+                </div>
+            </div>
+            </tr>
+            @endforeach
+            </table>
         </div>
     </div>
 </body>
