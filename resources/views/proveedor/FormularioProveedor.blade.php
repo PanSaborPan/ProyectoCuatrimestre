@@ -11,7 +11,7 @@
 
     @section('style')
     <link href="{{ asset('css/vendor.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/facebook/app.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/default/app.min.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" />
@@ -63,12 +63,12 @@
 
 {{-- Boton de Volver a la vista de Proveedor --}}
 <script>
-        function volverproveedor() {
+    function volverproveedor() {
 
-            $("#div").load("{{ url('/Proveedor') }}");
+        $("#div").load("{{ url('/Proveedor') }}");
 
-        }
-    </script>
+    }
+</script>
 
 <script type="text/javascript">
     $('#from1').on('submit', function(e) {
@@ -131,31 +131,31 @@
             @csrf
 
             <label class="form-label">Nombre</label>
-            <input class="form-control" id="nombre" type="text" placeholder="Nombre" required/>
+            <input class="form-control" id="nombre" type="text" placeholder="Nombre" required />
             <label class="form-label">Compañia</label>
-            <input class="form-control" id="compañia" type="text" placeholder="Compañia" required/>
+            <input class="form-control" id="compañia" type="text" placeholder="Compañia" required />
             <label class="form-label">Correo</label>
-            <input type="text" id="correo" class="form-control mb-5px" placeholder="Correo" required/>
+            <input type="text" id="correo" class="form-control mb-5px" placeholder="Correo" required />
             <label class="form-label">Telefono</label>
-            <input type="text" id="telefono" class="form-control" placeholder="Telefono" required/>
+            <input type="text" id="telefono" class="form-control" placeholder="Telefono" required />
             <label class="form-label">Celular</label>
-            <input type="text" id="celular" class="form-control" placeholder="Celular" required/>
+            <input type="text" id="celular" class="form-control" placeholder="Celular" required />
             <br>
             <label aling="center" class="form-label">DIRECCION:</label><br>
             <br>
 
             <label class="form-label">Calle</label>
-            <input type="text" id="calle" class="form-control" placeholder="Calle" required/>
+            <input type="text" id="calle" class="form-control" placeholder="Calle" required />
             <label class="form-label">Numero</label>
-            <input type="text" id="numero" class="form-control" placeholder="Numero" required/>
+            <input type="text" id="numero" class="form-control" placeholder="Numero" required />
             <label class="form-label">Ciudad</label>
-            <input type="text" id="ciudad" class="form-control" placeholder="Ciudad" required/>
+            <input type="text" id="ciudad" class="form-control" placeholder="Ciudad" required />
             <label class="form-label">Estado</label>
-            <input type="text" id="estado" class="form-control" placeholder="Estado" required/>
+            <input type="text" id="estado" class="form-control" placeholder="Estado" required />
             <label class="form-label">Pais</label>
-            <input type="text" id="pais" class="form-control" placeholder="Pais" required/>
+            <input type="text" id="pais" class="form-control" placeholder="Pais" required />
             <label class="form-label">Codigo postal</label>
-            <input type="text" id="codigo_postal" class="form-control" placeholder="Codigo Postal" required/>
+            <input type="text" id="codigo_postal" class="form-control" placeholder="Codigo Postal" required />
 
             <br>
             <button id="subir" type="submit" class="btn btn-primary">Crear nuevo proveedor</button>
