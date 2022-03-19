@@ -33,14 +33,14 @@
             <div class="panel-heading">
                 <h4 class="panel-title">tabla de productos</h4>
                 <div class="panel-heading-btn">
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+
                     <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
                     <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
                 </div>
             </div>
-            <div class="panel-body pe-1">
+            <div class="panel-body">
                 <div class="table-responsive">
-                    <table id="data-table-default5" class="table table-bordered align-middle">
+                    <table id="data-table-default5" class="table table-bordered mb-0 align-middle">
                         <thead>
                             <tr>
                                 <th width="1%">id</th>
@@ -109,7 +109,7 @@
             <div class="panel-heading">
                 <h4 class="panel-title">tabla de cliente</h4>
                 <div class="panel-heading-btn">
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+
                     <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
                     <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
                 </div>
@@ -117,7 +117,7 @@
             <div class="panel-body">
 
                 <div class="table-responsive">
-                    <table id="data-table-default2" class="table table-striped table-bordered align-middle">
+                    <table id="data-table-default2" class="table table-striped  table-bordered mb-0 align-middle">
                         <thead>
                             <tr>
                                 <th width="1%">id</th>
@@ -184,14 +184,14 @@
             <div class="panel-heading">
                 <h4 class="panel-title">tabla de proveedor</h4>
                 <div class="panel-heading-btn">
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+
                     <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
                     <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
                 </div>
             </div>
             <div class="panel-body">
                 <div class="table-responsive">
-                    <table id="data-table-default3" class="table table-striped table-bordered align-middle">
+                    <table id="data-table-default3" class="table table-striped table-bordered mb-0 align-middle">
                         <thead>
                             <tr>
                                 <th width="1%">id</th>
@@ -246,14 +246,14 @@
             <div class="panel-heading">
                 <h4 class="panel-title">tabla de ventas</h4>
                 <div class="panel-heading-btn">
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
+
                     <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
                     <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
                 </div>
             </div>
             <div class="panel-body ">
                 <div class="table-responsive">
-                    <table id="data-table-default4" class="table table-striped table-bordered align-middle">
+                    <table id="data-table-default4" class="table table-striped table-bordered mb-0 align-middle">
                         <thead>
                             <tr>
                                 <th width="1%" data-orderable="false">Folio</th>
@@ -300,14 +300,13 @@
             <div class="panel-heading">
                 <h4 class="panel-title">tabla de Usuarios</h4>
                 <div class="panel-heading-btn">
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-default" data-toggle="panel-expand"><i class="fa fa-expand"></i></a>
                     <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
                     <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
                 </div>
             </div>
             <div class="panel-body ">
                 <div class="table-responsive">
-                    <table id="data-table-default" class="table table-striped table-bordered align-middle">
+                    <table id="data-table-default" class="table table-striped table-bordered mb-0 align-middle">
                         <thead>
                             <tr>
                                 <th width="1%">id</th>
