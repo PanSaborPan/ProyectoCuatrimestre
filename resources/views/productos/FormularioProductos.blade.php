@@ -11,7 +11,7 @@
 
     @section('style')
     <link href="{{ asset('css/vendor.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/facebook/app.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/default/app.min.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" />
@@ -93,12 +93,12 @@
 
 {{-- Boton de Volver a la vista de Productos --}}
 <script>
-        function volverproductos() {
+    function volverproductos() {
 
-            $("#div").load("{{ url('/Productos') }}");
+        $("#div").load("{{ url('/Productos') }}");
 
-        }
-    </script>
+    }
+</script>
 
 
 <script type="text/javascript">
@@ -159,23 +159,23 @@
             @csrf
             <span class="badge bg-danger rounded-pill">Rojo:para poder borrar o bajos de stock</span>
             <label class="form-label">Nombre del producto</label>
-            <input class="form-control" id="Nombre_del_producto" type="text" placeholder="Nombre del producto" required/>
+            <input class="form-control" id="Nombre_del_producto" type="text" placeholder="Nombre del producto" required />
             <label class="form-label">Descriptcion del producto</label>
             <textarea class="form-control" id="Descripcion_del_producto" placeholder="Descrpcion del producto" required></textarea>
             <label class="form-label">Clave del sat</label>
-            <input type="number" id="Clave_del_sat" class="form-control mb-5px" placeholder="Clave SAT" required/>
+            <input type="number" id="Clave_del_sat" class="form-control mb-5px" placeholder="Clave SAT" required />
             <label class="form-label">Clave de unidad</label>
-            <input type="text" id="Clave_de_unidad" class="form-control" placeholder="Clave de unidad" required/>
+            <input type="text" id="Clave_de_unidad" class="form-control" placeholder="Clave de unidad" required />
             <label class="form-label">Tipo</label>
-            <input type="text" id="Tipo" class="form-control" placeholder="Tipo" required/>
+            <input type="text" id="Tipo" class="form-control" placeholder="Tipo" required />
             <label class="form-label">Precio unitario</label>
-            <input type="number" id="Precio_unitario" class="form-control" placeholder="Precio por unidad" required/>
+            <input type="number" id="Precio_unitario" class="form-control" placeholder="Precio por unidad" required />
             <label class="form-label">Existencias actuales</label>
-            <input type="number" id="Existencias_actuales" class="form-control" placeholder="Existencias" required/>
+            <input type="number" id="Existencias_actuales" class="form-control" placeholder="Existencias" required />
             <label class="form-label">Puntos de reabastecimiento</label>
-            <input type="number" id="Punto_de_reabastecimiento" class="form-control" placeholder="Puntos de reabastecimiento" required/>
+            <input type="number" id="Punto_de_reabastecimiento" class="form-control" placeholder="Puntos de reabastecimiento" required />
             <label class="form-label">Cuenta de activo de inventario</label>
-            <input type="number" id="Cuenta_de_activo_de_inventario" class="form-control" placeholder="Cuenta de activo de inventario" required/>
+            <input type="number" id="Cuenta_de_activo_de_inventario" class="form-control" placeholder="Cuenta de activo de inventario" required />
             <br>
             <br>
             <button id="subir" type="submit" class="btn btn-primary">Crear nuevo producto</button>

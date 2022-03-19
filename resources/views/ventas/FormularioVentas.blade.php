@@ -11,7 +11,7 @@
 
     @section('style')
     <link href="{{ asset('css/vendor.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/facebook/app.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/default/app.min.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" />
@@ -63,12 +63,12 @@
 
 {{-- Boton de Volver a la vista de Ventas --}}
 <script>
-        function volverventas() {
+    function volverventas() {
 
-            $("#div").load("{{ url('/Ventas') }}");
+        $("#div").load("{{ url('/Ventas') }}");
 
-        }
-    </script>
+    }
+</script>
 
 <script type="text/javascript">
     $('#from1').on('submit', function(e) {
@@ -121,15 +121,15 @@
             @csrf
 
             <label class="form-label">Cliente</label>
-            <input class="form-control" id="cliente" type="text" placeholder="Cliente" required/>
+            <input class="form-control" id="cliente" type="text" placeholder="Cliente" required />
             <label class="form-label">Producto</label>
-            <input class="form-control" id="producto" type="text" placeholder="Producto" required/>
+            <input class="form-control" id="producto" type="text" placeholder="Producto" required />
             <label class="form-label">Descripcion</label>
             <textarea id="descripcion" class="form-control mb-5px" placeholder="Descripcion" required></textarea>
             <label class="form-label">Cantidad</label>
-            <input type="number" id="cantidad" class="form-control" placeholder="Cantidad" required/>
+            <input type="number" id="cantidad" class="form-control" placeholder="Cantidad" required />
             <label class="form-label">Precio por unidad</label>
-            <input type="number" class="form-control" step="0.01" id="precio_unitario" placeholder="Precio_Unitario" required/>
+            <input type="number" class="form-control" step="0.01" id="precio_unitario" placeholder="Precio_Unitario" required />
             <br>
             <button id="subir" type="submit" class="btn btn-primary">Crear nueva venta</button>
 
@@ -143,7 +143,7 @@
 
 
 
-    
+
 
     </div>
 </body>

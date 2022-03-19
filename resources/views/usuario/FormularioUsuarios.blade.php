@@ -11,7 +11,7 @@
 
     @section('style')
     <link href="{{ asset('css/vendor.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/facebook/app.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/default/app.min.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" />
@@ -96,12 +96,12 @@
 
 {{-- Boton de Volver a la vista de usuarios --}}
 <script>
-        function volver() {
+    function volver() {
 
-            $("#div").load("{{ url('/Usuarios') }}");
+        $("#div").load("{{ url('/Usuarios') }}");
 
-        }
-    </script>
+    }
+</script>
 
 
 @show
@@ -109,24 +109,24 @@
 <body>
 
     <div id="div">
-        
+
         <h1>Captura de usuarios</h1>
         <form id="from1">
 
             @csrf
 
             <label class="form-label">Nombre</label>
-            <input class="form-control" id="nombre" type="text" placeholder="Nombre" required/>
+            <input class="form-control" id="nombre" type="text" placeholder="Nombre" required />
             <label class="form-label">Area</label>
-            <input class="form-control" id="area" type="text" placeholder="Area" required/>
+            <input class="form-control" id="area" type="text" placeholder="Area" required />
             <label class="form-label">Usuario</label>
-            <input type="text" id="usuario" class="form-control mb-5px" placeholder="Usuario" required/>
+            <input type="text" id="usuario" class="form-control mb-5px" placeholder="Usuario" required />
             <label class="form-label">Contraseña</label>
-            <input type="password" id="password" class="form-control" placeholder="Contraseña" required/>
+            <input type="password" id="password" class="form-control" placeholder="Contraseña" required />
             <br>
             <button id="subir" type="submit" class="btn btn-primary">Crear nuevo usuario</button>
         </form>
-        
+
         <button onclick="volver()" id="volver" class="btn btn-danger">volver</button>
         <br>
         <br>
