@@ -10,7 +10,7 @@
 
     @section('style')
     <link href="{{ asset('css/vendor.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/facebook/app.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/default/app.min.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     @show
 </head>
@@ -26,6 +26,7 @@
 
 
 <script>
+
     function usuarios() {
         $("#content-top").load("{{ url('/Usuarios') }}");
     };
@@ -61,14 +62,18 @@
 
     <!-- loader -->
     <!-- #app -->
-    <div id="app" class="app app-header-fixed app-sidebar-fixed has-scroll">
+    <div id="loader" class="app-loader">
+        <span class="spinner"></span>
+    </div>
+
+        <div id="app" class="app app-header-fixed app-sidebar-fixed">
 
 
         <!-- [fin]header -->
         <div id="header" class="app-header">
             <!-- BEGIN navbar-header -->
             <div class="navbar-header">
-                <a href="{{ url('/welcome') }}" class="navbar-brand"><span class="navbar-logo"></span>Medical Serivices Pack</a>
+                <a href="{{ url('/welcome') }}" class="navbar-brand">Medical Serivices Pack</a>
 
                 <button type="button" class="navbar-mobile-toggler" data-bs-toggle="collapse" data-bs-target="#top-navbar">
                     <span class="fa-stack fa-lg">
@@ -89,57 +94,11 @@
             <!-- END navbar-header -->
 
             <!-- BEGIN header-nav -->
-            <div class="d-md-block me-auto collapse" id="top-navbar">
-                <div class="navbar-nav">
-                    <div class="navbar-item dropdown ">
-                        <a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-id-card fa-fw me-1 me-md-0">
-                            </i>
-                            <span class="d-lg-inline d-md-none">Listado de usuarios</span>
-                            <b class="caret ms-1 ms-md-0"></b>
-                        </a>
-                        <div class="dropdown-menu" style>
-                            <a onclick="usuarios()" class="dropdown-item">Usuarios</a>
-                            <div class="dropdown-divider"></div>
-                            <a onclick="proveedor()" class="dropdown-item">Proveedores</a>
-                            <div class="dropdown-divider"></div>
-                            <a onclick="clientes()" class="dropdown-item">Clientes</a>
-                            <div class="dropdown-divider"></div>
-                            <a onclick="ventas()" class="dropdown-item">Ventas</a>
-                            <div class="dropdown-divider"></div>
-                            <a onclick="productos()" class="dropdown-item">Productos</a>
-
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
+            
 
             <div class="navbar-nav">
 
-                <div class="navbar-item dropdown">
-                    <a href="#" data-bs-toggle="dropdown" class="navbar-link dropdown-toggle icon">
-                        <i class="fa fa-bell"></i>
-                        <span class="badge">5</span>
-                    </a>
-                    <div class="dropdown-menu media-list dropdown-menu-end">
-                        <div class="dropdown-header">NOTIFICACIONES (1)</div>
-                        <a href="javascript:;" class="dropdown-item media">
-                            <div class="media-left">
-                                <i class="fa fa-bug media-object bg-gray-500"></i>
-                            </div>
-                            <div class="media-body">
-                                <h6 class="media-heading">Titulo <i class="fa fa-exclamation-circle text-danger"></i></h6>
-                                <div class="text-muted fs-10px">Descripción</div>
-                            </div>
-                        </a>
-                        <div class="dropdown-footer text-center">
-                            <a href="javascript:;" class="text-decoration-none">Ver todas...</a>
-                        </div>
-                    </div>
-                </div>
-
+                
 
                 <div class="navbar-item navbar-user dropdown">
                     <a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
@@ -165,8 +124,112 @@
 
         <!-- [fin] header -->
         <!-- BEGIN #sidebar -->
+        <div id="sidebar" class="app-sidebar">
+            <div class="app-sidebar-content" data-scrollbar="true" data-height="100%">
+                <div class="menu">
+                    <div class="menu-profile">
+                    <a href="javascript:;" class="menu-profile-link" data-toggle="app-sidebar-profile" data-target="#appSidebarProfileMenu">
+                        <div class="menu-profile-cover with-shadow"></div>
+                        <div class="menu-profile-image">
+                            <img src="{{ asset('img/login-bg/teri.jpg') }}" alt="" />
+                        </div>
+                        <div class="menu-profile-info">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <div> 
+                                        {{Session::get('users.Usuario')}}
+                                    </div>
+                                
+                                </div>
+                                <div class="menu-caret ms-auto"></div>
+                            </div>
+                            <small></small>
 
+                        </div>
+                        </a>
+                    </div>
+                    <div id="appSidebarProfileMenu" class="collapse" >
+                        <div class="menu-item pt-5px">
+                            <a href="#" class="menu-link">
+                                <div class="menu-icon"><i class="fa fa-cog"></i></div>
+                                <div class="menu-text">Settings</div>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#" class="menu-link">
+                                <div class="menu-icon"><i class="fa fa-pencil-alt"></i></div>
+                                <div class="menu-text"> Send Feedback</div>
+                            </a>
+                        </div>
+                        <div class="menu-item pb-5px">
+                            <a href="" class="menu-link">
+                                <div class="menu-icon"><i class="fa fa-question-circle"></i></div>
+                                <div class="menu-text"> Helps</div>
+                            </a>
+                        </div>
+                        <div class="menu-divider m-0"></div>
+                    </div>
+                    <div class="menu-header">Navigation</div>
 
+                    <div class="menu-item ">
+                        <a href="#" class="menu-link">
+                            <div class="menu-icon">
+                                <i class="fa fa-home"></i>
+                            </div>
+                            <div class="menu-text">Dashboard</div>
+                        </a>
+                        <div class="menu-item ">
+                        <a onclick="clientes()" class="menu-link">
+                            <div class="menu-icon">
+                                <i class="fa fa-address-book"></i>
+                            </div>
+                            <div class="menu-text">Clientes</div>
+                        </a>
+
+                    </div>
+                    <div class="menu-item ">
+                        <a onclick="productos()" class="menu-link">
+                            <div class="menu-icon">
+                            <i class="fa fa-archive" aria-hidden="true"></i>
+                            </div>
+                            <div class="menu-text">Productos</div>
+                        </a>
+
+                    </div>
+                    <div class="menu-item ">
+                        <a onclick="proveedor()" class="menu-link">
+                            <div class="menu-icon">
+                                
+                            <i class="fa fa-id-card"></i>
+                            </div>
+                            <div class="menu-text">Proveedores</div>
+                        </a>
+
+                    </div>
+                    <div class="menu-item ">
+                        <a onclick="ventas()" class="menu-link">
+                            <div class="menu-icon">
+                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+
+                            </div>
+                            <div class="menu-text">Ventas</div>
+                        </a>
+
+                    </div>
+                    <div class="menu-item ">
+                        <a onclick="usuarios()" class="menu-link">
+                            <div class="menu-icon">
+                            <i class="fa fa-th-large fa-user"></i>
+                            </div>
+                            <div class="menu-text">Usuarios</div>
+                        </a>
+
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
 
         <!-- END #sidebar -->
 
