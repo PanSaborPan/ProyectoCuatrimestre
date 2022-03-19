@@ -15,6 +15,11 @@ class ProveedorController extends Controller
         return view('proveedor.proveedor', compact('proveedor'));
     }
 
+    // Funcion para la vista de formulario de Proveedores
+    public function formularioproveedor()
+    {
+        return view('proveedor.FormularioProveedor');
+    }
 
     public function create(Request $request)
     {
