@@ -10,7 +10,7 @@
 
     @section('style')
     <link href="{{ asset('css/vendor.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/facebook/app.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/default/app.min.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     @show
 </head>
@@ -68,7 +68,7 @@
         <div id="header" class="app-header">
             <!-- BEGIN navbar-header -->
             <div class="navbar-header">
-                <a href="{{ url('/welcome') }}" class="navbar-brand"><span class="navbar-logo"></span>Medical Serivices Pack</a>
+                <a href="{{ url('/welcome') }}" class="navbar-brand">Medical Serivices Pack</a>
 
                 <button type="button" class="navbar-mobile-toggler" data-bs-toggle="collapse" data-bs-target="#top-navbar">
                     <span class="fa-stack fa-lg">
@@ -165,7 +165,37 @@
 
         <!-- [fin] header -->
         <!-- BEGIN #sidebar -->
+        <div id="sidebar" class="app-sidebar">
+            <div class="app-sidebar-content" data-scrollbar="true" data-height="100%">
+                <div class="menu">
+                    <div class="menu-profile">
+                        <div class="menu-profile-cover with-shadow"></div>
+                        <div class="menu-profile-image">
+                            <img src="{{asset('img/login-bg/teri.jpg')}}" alt="" />
+                        </div>
+                        <div class="menu-profile-info">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
 
+                                </div>
+                                <div class="menu-caret ms-auto"></div>
+                            </div>
+                            <small></small>
+                        </div>
+                    </div>
+                    <div class="menu-header">Navigation</div>
+
+                    <div class="menu-item ">
+                        <a href="#" class="menu-link">
+                            <div class="menu-icon">
+                                <i class="fa fa-home"></i>
+                            </div>
+                            <div class="menu-text">Dashboard</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
         <!-- END #sidebar -->
