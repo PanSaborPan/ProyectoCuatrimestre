@@ -27,6 +27,7 @@
 
 <script>
     function usuarios() {
+
         $("#content-top").load("{{ url('/Usuarios') }}");
     };
 
@@ -130,135 +131,108 @@
 
                         <div class="menu-profile-cover with-shadow"></div>
                         <div class="menu-profile-image">
-                            <img src="{{asset('img/login-bg/teri.jpg')}}" alt="" />
-
-                            <a href="javascript:;" class="menu-profile-link" data-toggle="app-sidebar-profile" data-target="#appSidebarProfileMenu">
-                                <div class="menu-profile-cover with-shadow"></div>
-                                <div class="menu-profile-image">
-                                    <img src="{{ asset('img/login-bg/teri.jpg') }}" alt="" />
-
-                                </div>
-                                <div class="menu-profile-info">
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-grow-1">
-
-
-
-                                            <div>
-                                                {{Session::get('users.Usuario')}}
-                                            </div>
-
-
-                                        </div>
-                                        <div class="menu-caret ms-auto"></div>
-                                    </div>
-                                    <small></small>
-
-                                </div>
+                            <img src="{{ asset('img/login-bg/teri.jpg') }}" alt="" />
                         </div>
-                        <div class="menu-header">Navigation</div>
+                        <div class="menu-profile-info">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <div>
+                                        {{Session::get('users.Usuario')}}
+                                    </div>
 
-                        <div class="menu-item ">
-                            <a href="#" class="menu-link">
-                                <div class="menu-icon">
-                                    <i class="fa fa-home"></i>
                                 </div>
-                                <div class="menu-text">Dashboard</div>
+
+                            </div>
+                            <small></small>
+
+                        </div>
+
+                    </div>
+                    <div class="menu-header">Profile Settings</div>
+                    <div id="appSidebarProfileMenu">
+                        <div class="menu-item pt-5px">
+                            <a href="#" class="menu-link">
+                                <div class="menu-icon"><i class="fa fa-cog"></i></div>
+                                <div class="menu-text">Settings</div>
                             </a>
+                        </div>
+                        <div class="menu-item">
+                            <a href="#" class="menu-link">
+                                <div class="menu-icon"><i class="fa fa-pencil-alt"></i></div>
+                                <div class="menu-text"> Send Feedback</div>
+                            </a>
+                        </div>
+                        <div class="menu-item pb-5px">
+                            <a href="#" class="menu-link">
+                                <div class="menu-icon"><i class="fa fa-question-circle"></i></div>
+                                <div class="menu-text"> Helps</div>
+                            </a>
+                        </div>
+                        <div class="menu-divider m-0"></div>
+                    </div>
+                    <div class="menu-header">Navigation</div>
+
+                    <div class="menu-item ">
+                        <a href="{{ url('/welcome') }}" class="menu-link">
+                            <div class="menu-icon">
+                                <i class="fa fa-home"></i>
+                            </div>
+                            <div class="menu-text">Dashboard</div>
+                        </a>
+                        <div class="menu-item ">
+                            <a onclick="clientes()" class="menu-link">
+                                <div class="menu-icon">
+                                    <i class="fa fa-address-book"></i>
+                                </div>
+                                <div class="menu-text">Clientes</div>
+                            </a>
+
+                        </div>
+                        <div class="menu-item ">
+                            <a onclick="productos()" class="menu-link">
+                                <div class="menu-icon">
+                                    <i class="fa fa-archive" aria-hidden="true"></i>
+                                </div>
+                                <div class="menu-text">Productos</div>
+                            </a>
+
+                        </div>
+                        <div class="menu-item ">
+                            <a onclick="proveedor()" class="menu-link">
+                                <div class="menu-icon">
+
+                                    <i class="fa fa-id-card"></i>
+                                </div>
+                                <div class="menu-text">Proveedores</div>
+                            </a>
+
+                        </div>
+                        <div class="menu-item ">
+                            <a onclick="ventas()" class="menu-link">
+                                <div class="menu-icon">
+                                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+
+                                </div>
+                                <div class="menu-text">Ventas</div>
+                            </a>
+
+                        </div>
+                        <div class="menu-item ">
+                            <a onclick="usuarios()" class="menu-link">
+                                <div class="menu-icon">
+                                    <i class="fa fa-th-large fa-user"></i>
+                                </div>
+                                <div class="menu-text">Usuarios</div>
+                            </a>
+
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
-        </a>
-    </div>
-    <div id="appSidebarProfileMenu" class="collapse">
-        <div class="menu-item pt-5px">
-            <a href="#" class="menu-link">
-                <div class="menu-icon"><i class="fa fa-cog"></i></div>
-                <div class="menu-text">Settings</div>
-            </a>
-        </div>
-        <div class="menu-item">
-            <a href="#" class="menu-link">
-                <div class="menu-icon"><i class="fa fa-pencil-alt"></i></div>
-                <div class="menu-text"> Send Feedback</div>
-            </a>
-        </div>
-        <div class="menu-item pb-5px">
-            <a href="" class="menu-link">
-                <div class="menu-icon"><i class="fa fa-question-circle"></i></div>
-                <div class="menu-text"> Helps</div>
-            </a>
-        </div>
-        <div class="menu-divider m-0"></div>
-    </div>
-    <div class="menu-header">Navigation</div>
 
 
-    <div class="menu-item ">
-        <a href="#" class="menu-link">
-            <div class="menu-icon">
-                <i class="fa fa-home"></i>
-            </div>
-            <div class="menu-text">Dashboard</div>
-        </a>
-        <div class="menu-item ">
-            <a onclick="clientes()" class="menu-link">
-                <div class="menu-icon">
-                    <i class="fa fa-address-book"></i>
-                </div>
-                <div class="menu-text">Clientes</div>
-            </a>
-
-        </div>
-        <div class="menu-item ">
-            <a onclick="productos()" class="menu-link">
-                <div class="menu-icon">
-                    <i class="fa fa-archive" aria-hidden="true"></i>
-                </div>
-                <div class="menu-text">Productos</div>
-            </a>
-
-        </div>
-        <div class="menu-item ">
-            <a onclick="proveedor()" class="menu-link">
-                <div class="menu-icon">
-
-                    <i class="fa fa-id-card"></i>
-                </div>
-                <div class="menu-text">Proveedores</div>
-            </a>
-
-        </div>
-        <div class="menu-item ">
-            <a onclick="ventas()" class="menu-link">
-                <div class="menu-icon">
-                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-
-                </div>
-                <div class="menu-text">Ventas</div>
-            </a>
-
-        </div>
-        <div class="menu-item ">
-            <a onclick="usuarios()" class="menu-link">
-                <div class="menu-icon">
-                    <i class="fa fa-th-large fa-user"></i>
-                </div>
-                <div class="menu-text">Usuarios</div>
-            </a>
-
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
-
-
-    <!-- END #sidebar -->
+        <!-- END #sidebar -->
 
     </div>
     <!-- termina app -->

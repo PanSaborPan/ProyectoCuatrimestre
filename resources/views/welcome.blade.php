@@ -1,7 +1,10 @@
 @extends('base')
 
+@section('title', 'Welcome')
+
 @section('style')
 @parent
+
 <link href="{{asset ('plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.css')}}" rel="stylesheet" />
 <link href="{{asset('plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" />
 <link href="{{asset('plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}" rel="stylesheet" />
@@ -11,17 +14,13 @@
 @endsection
 
 
-@section('title', 'Welcome')
-
-
-@section('container')
-@parent
 
 
 
 
 
-@section('title', 'Welcome')
+
+
 
 @section('container')
 <html>
@@ -207,7 +206,7 @@
                                 <th width="1%">Estado</th>
                                 <th width="1%">Pais</th>
                                 <th width="1%">Codigo postal</th>
-                                <th width="1%">Acciones</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -228,14 +227,7 @@
                                 <td style="display: none;">{{$item->Estado}}</td>
                                 <td style="display: none;">{{$item->Pais}}</td>
                                 <td style="display: none;">{{$item->Codigo_postal}}</td>
-                                <td style="display: none;">
 
-
-
-                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_proveedor}}">Modificar</button>
-                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_proveedor}}">Borrar</button>
-
-                                </td>
 
                             </tr>
                             @endforeach
