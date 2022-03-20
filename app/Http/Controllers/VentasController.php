@@ -15,6 +15,12 @@ class VentasController extends Controller
         return view('ventas.ventas', compact('ventas'));
     }
 
+// Funcion para la vista de formulario de Ventas
+public function formularioventas()
+{
+    return view('ventas.FormularioVentas');
+}
+
     public function create(Request $request)
     {
         $calculariva = 0.16;

@@ -10,9 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     @section('style')
+
+
+
     <link href="{{ asset('css/vendor.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/facebook/app.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/default/app.min.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+
     <link href="{{ asset('plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-fixedcolumns-bs4/css/fixedColumns.bootstrap4.min.css') }}" rel="stylesheet" />
@@ -61,6 +65,13 @@
     };
 </script>
 
+<script>
+    function showform() {
+
+        var url = '{{ route("user.forms") }}';
+        $("#div").load(url);
+    };
+</script>
 
 <script type="text/javascript">
     $('#from1').on('submit', function(e) {
@@ -103,68 +114,58 @@
 
     <div id="div">
 
-        <h1>Captura de usuarios</h1>
-        <form id="from1">
+        {{-- Boton para mandar a formulario de Usuarios --}}
 
-            @csrf
-
-            <label class="form-label">Nombre</label>
-            <input class="form-control" id="nombre" type="text" placeholder="Nombre" />
-            <label class="form-label">Area</label>
-            <input class="form-control" id="area" type="text" placeholder="Area" />
-            <label class="form-label">Usuario</label>
-            <input type="text" id="usuario" class="form-control mb-5px" placeholder="Usuario" />
-            <label class="form-label">Contraseña</label>
-            <input type="password" id="password" class="form-control" placeholder="Contraseña" />
-            <br>
-            <button id="subir" type="submit" class="btn btn-primary">Crear nuevo usuario</button>
-        </form>
+        <div class="panel panel-inverse" data-sortable-id="table-basic-7">
+            <div class="panel-heading">
+                <h3 class="panel-title">Tabla de usuarios actuales</h3>
 
 
-        <br>
-        <br>
+                <div class="panel-heading-btn">
+                    <a onclick="showform()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+                </div>
+
+            </div>
 
 
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table id="data-table-default" class="table table-striped table-bordered align-middle">
+                        <thead>
+                            <tr>
+                                <th width="1%">id</th>
+                                <th width="1%">Nombre</th>
+                                <th width="1%">Area</th>
+                                <th width="1%">Usuario</th>
+                                <th width="1%">Contraseña</th>
+                                <th width="1%">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
 
-        <h1>Tabla de usuarios actuales</h1>
+                            @foreach($usuarios as $item)
+                            <tr class="fradeX odd">
 
-
-        <table id="data-table-default" class="table table-striped table-bordered align-middle">
-            <thead>
-                <tr>
-                    <th width="1%">id</th>
-                    <th width="1%">Nombre</th>
-                    <th width="1%">Area</th>
-                    <th width="1%">Usuario</th>
-                    <th width="1%">Contraseña</th>
-                    <th width="1%">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-
-
-                @foreach($usuarios as $item)
-                <tr class="fradeX odd">
-
-                    <td style="display: none;">{{$item->Id_usuario}}</td>
-                    <td style="display: none;">{{$item->Nombre}}</td>
-                    <td style="display: none;">{{$item->Area}}</td>
-                    <td style="display: none;">{{$item->Usuario}}</td>
-                    <td style="display: none;">{{$item->Contraseña}}</td>
-                    <td style="display: none;">
+                                <td style="display: none;">{{$item->Id_usuario}}</td>
+                                <td style="display: none;">{{$item->Nombre}}</td>
+                                <td style="display: none;">{{$item->Area}}</td>
+                                <td style="display: none;">{{$item->Usuario}}</td>
+                                <td style="display: none;">{{$item->Contraseña}}</td>
+                                <td style="display: none;">
 
 
 
-                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_usuario}}">Modificar</button>
-                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_usuario}}">Borrar</button>
+                                    <button class="menu-link" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_usuario}}"><i class="fas fa-pen"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
 
-                    </td>
-
-                </tr>
-                @endforeach
-        </table>
-
+                                </td>
+                </div>
+            </div>
+            </tr>
+            @endforeach
+            </table>
+        </div>
     </div>
     <footer>
         <div id="footer" class="app-footer m-0">

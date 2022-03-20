@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\productos;
+use App\Models\Usuario;
 
 class ProductosController extends Controller
 {
@@ -15,6 +16,11 @@ class ProductosController extends Controller
         return view('productos.productos', compact('productos'));
     }
 
+    // Funcion para la vista de formulario de Productos
+public function formularioproductos()
+{
+    return view('productos.FormularioProductos');
+}
 
     public function create(Request $request)
     {

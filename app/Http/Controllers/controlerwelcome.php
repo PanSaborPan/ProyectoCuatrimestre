@@ -2,27 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
-use App\Models\productos;
-use App\Models\usuario;
-use App\Models\proveedor;
-use App\Models\ventas;
+use Illuminate\Http\Request;
 use App\Models\clientes;
+use App\Models\Usuario;
+use App\Models\productos;
+use App\Models\proveedor;
+use App\Models\Ventas;
 
 class controlerwelcome extends Controller
 {
     public function welco()
     {
-        $productos = productos::all();
-        $usuarios = usuario::all();
-        $proveedor = proveedor::all();
-        $ventas = ventas::all();
         $clientes = clientes::all();
-
-        return view('welcome', compact('productos','usuarios','proveedor','ventas','clientes'));
+        $productos = productos::all();
+        $proveedor = proveedor::all();
+        $usuarios = Usuario::all();
+        $ventas = Ventas::all();
+        return view('welcome', compact('clientes', 'productos', 'proveedor', 'usuarios', 'ventas'));
     }
-   
 }

@@ -11,7 +11,7 @@
 
     @section('style')
     <link href="{{ asset('css/vendor.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/facebook/app.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/default/app.min.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" />
@@ -57,6 +57,14 @@
 
         var url = '{{ route("cliente.delete", ":id") }}';
         url = url.replace(':id', b.value);
+        $("#div").load(url);
+    };
+</script>
+
+<script>
+    function showform() {
+
+        var url = '{{ route("cliente.forms") }}';
         $("#div").load(url);
     };
 </script>
@@ -123,120 +131,85 @@
 
     <div id="div">
 
-        <h1>Captura de Clientes</h1>
-        <form id="from1">
 
-            @csrf
+        {{-- Boton para mandar a formulario de Clientes --}}
+        <div class="panel panel-inverse" data-sortable-id="table-basic-7">
+            <div class="panel-heading">
+                <h3 class="panel-title">Tabla de Clientes actuales</h3>
 
-            <label class="form-label">Nombre de contacto</label>
-            <input class="form-control" id="Nombre_de_contacto" type="text" placeholder="Nombre de contacto" />
-            <label class="form-label">Nombre de empresa</label>
-            <input class="form-control" id="Nombre_de_empresa" type="text" placeholder="Nombre de empreza" />
-            <label class="form-label">Razon social</label>
-            <input type="text" id="Razonsocial" class="form-control mb-5px" placeholder="Razon social" />
-            <label class="form-label">RFC</label>
-            <input type="text" id="Rfc" class="form-control" placeholder="RFC" />
-            <label class="form-label">Telefono</label>
-            <input type="text" id="Telefono" class="form-control" placeholder="Telefono" />
-            <label class="form-label">Movil</label>
-            <input type="text" id="Movil" class="form-control" placeholder="Telefono" />
-            <label class="form-label">Correo electronico 1</label>
-            <input type="email" id="Correo_electronico_1" class="form-control" placeholder="Correo1@hotmail.com" />
-            <label class="form-label">Correo electronico 2</label>
-            <input type="email" id="Correo_electronico_2" class="form-control" placeholder="Correo2@hotmail.com" />
-            <br>
-            <label aling="center" class="form-label">DIRECCION:</label><br>
-            <label class="form-label">Calle</label>
-            <input type="text" id="Calle" class="form-control" placeholder="Calle" />
-            <label class="form-label">Numero</label>
-            <input type="text" id="Numero" class="form-control" placeholder="Numero" />
-            <label class="form-label">Codigo postal</label>
-            <input type="text" id="Codigo_Postal" class="form-control" placeholder="CP" />
-            <label class="form-label">Ciudad</label>
-            <input type="text" id="Ciudad" class="form-control" placeholder="Ciudad" />
-            <label class="form-label">Estado</label>
-            <input type="text" id="Estado" class="form-control" placeholder="Estado" />
-            <label class="form-label">Pais</label>
-            <input type="text" id="Pais" class="form-control" placeholder="Pais" />
 
-            <br>
-            <button id="subir" type="submit" class="btn btn-primary">Crear nuevo cliente</button>
-        </form>
+                <div class="panel-heading-btn">
+                    <a onclick="showform()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+                </div>
 
-        <br>
-        <br>
-         
+            </div>
+
+            <div class="panel-body">
+                <div class="table-responsive">
 
 
 
-        <h1>Tabla de Clientes actuales</h1>
+                    <table id="data-table-default" class="table table-striped table-bordered align-middle">
+                        <thead>
+                            <tr>
+                                <th width="1%">id</th>
+                                <th width="1%">Nombre</th>
+                                <th width="1%">Empresa</th>
+                                <th width="1%">Razon social</th>
+                                <th width="1%">RFC</th>
+                                <th width="1%">Telefono</th>
+                                <th width="1%">Movil</th>
+                                <th width="1%">Correo electronico 1</th>
+                                <th width="1%">Correo electronico 2</th>
+                                <th width="1%">Calle</th>
+                                <th width="1%">Numero</th>
+                                <th width="1%">Codigo postal</th>
+                                <th width="1%">Ciudad</th>
+                                <th width="1%">Estado</th>
+                                <th width="1%">Pais</th>
+                                <th width="1%">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
 
-        <table id="data-table-default" class="table table-striped table-bordered align-middle">
-            <thead>
-                <tr>
-                    <th width="1%">id</th>
-                    <th width="1%">Nombre</th>
-                    <th width="1%">Empresa</th>
-                    <th width="1%">Razon social</th>
-                    <th width="1%">RFC</th>
-                    <th width="1%">Telefono</th>
-                    <th width="1%">Movil</th>
-                    <th width="1%">Correo electronico 1</th>
-                    <th width="1%">Correo electronico 2</th>
-                    <th width="1%">Calle</th>
-                    <th width="1%">Numero</th>
-                    <th width="1%">Codigo postal</th>
-                    <th width="1%">Ciudad</th>
-                    <th width="1%">Estado</th>
-                    <th width="1%">Pais</th>
-                    <th width="1%">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
+                            @foreach($clientes as $item)
+                            <tr class="fradeX odd">
 
-
-                @foreach($clientes as $item)
-                <tr class="fradeX odd">
-
-                    <td style="display: none;">{{$item->Id_cliente}}</td>
-                    <td style="display: none;">{{$item->Nombre_de_contacto}}</td>
-                    <td style="display: none;">{{$item->Nombre_de_empresa}}</td>
-                    <td style="display: none;">{{$item->Razonsocial}}</td>
-                    <td style="display: none;">{{$item->Rfc}}</td>
-                    <td style="display: none;">{{$item->Telefono}}</td>
-                    <td style="display: none;">{{$item->Movil}}</td>
-                    <td style="display: none;">{{$item->Correo_electronico_1}}</td>
-                    <td style="display: none;">{{$item->Correo_electronico_2}}</td>
-                    <td style="display: none;">{{$item->Calle}}</td>
-                    <td style="display: none;">{{$item->Numero}}</td>
-                    <td style="display: none;">{{$item->Codigo_Postal}}</td>
-                    <td style="display: none;">{{$item->Ciudad}}</td>
-                    <td style="display: none;">{{$item->Estado}}</td>
-                    <td style="display: none;">{{$item->Pais}}</td>
-                    <td style="display: none;">
+                                <td style="display: none;">{{$item->Id_cliente}}</td>
+                                <td style="display: none;">{{$item->Nombre_de_contacto}}</td>
+                                <td style="display: none;">{{$item->Nombre_de_empresa}}</td>
+                                <td style="display: none;">{{$item->Razonsocial}}</td>
+                                <td style="display: none;">{{$item->Rfc}}</td>
+                                <td style="display: none;">{{$item->Telefono}}</td>
+                                <td style="display: none;">{{$item->Movil}}</td>
+                                <td style="display: none;">{{$item->Correo_electronico_1}}</td>
+                                <td style="display: none;">{{$item->Correo_electronico_2}}</td>
+                                <td style="display: none;">{{$item->Calle}}</td>
+                                <td style="display: none;">{{$item->Numero}}</td>
+                                <td style="display: none;">{{$item->Codigo_Postal}}</td>
+                                <td style="display: none;">{{$item->Ciudad}}</td>
+                                <td style="display: none;">{{$item->Estado}}</td>
+                                <td style="display: none;">{{$item->Pais}}</td>
+                                <td style="display: none;">
 
 
 
-                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}">Modificar</button>
-                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}">Borrar</button>
+                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
 
-                    </td>
+                                </td>
 
-                </tr>
-                @endforeach
-        </table>
-
-    </div>
-    <footer>
-        <div id="footer" class="app-footer m-0">
-            &copy; 2021 TNS Custom Bussiness All Right Reserved
+                            </tr>
+                            @endforeach
+                    </table>
+                </div>
+            </div>
         </div>
-    </footer>
-    @else
-    <script>
-        window.location = "{{ route('home') }}";
-        alert('no has iniciado session');
-    </script>
-    @endif
+        @else
+        <script>
+            window.location = "{{ route('home') }}";
+            alert('no has iniciado session');
+        </script>
+        @endif
 </body>
