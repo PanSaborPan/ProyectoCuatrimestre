@@ -42,15 +42,13 @@
         $("#telefono").mask("(99)-9999-9999");
     </script>
 
-    <script>
-        function volver() {
+<script>
+    function volverproductos() {
 
-            $("#div").load("{{ url('/Productos') }}");
+        $("#div").load("{{ url('/Productos') }}");
 
-        }
-    </script>
-
-
+    }
+</script>
 
 
     <script type="text/javascript">
@@ -108,11 +106,25 @@
 <body>
     @if(Session::has('users.Usuario'))
     <div id="div">
-        <div class="mb-3">
-            <h1>Modificacion de productos</h1>
+    <div class="panel panel-inverse" data-sortable-id="form-stuff-3">
+            <div class="panel-heading">
+                <h5 class="panel-title">Modificar Producto</h5>
+
+                
+
+                
+
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
 
             <form data-parsley-validate="true" id="from1">
-
+            <div class="row mb-3">
+            
+            <div class="col-md-5">
+            <div class="mb-7px">
+            
+            <br>
 
                 @foreach($productos as $item)
                 <input type="hidden" value="{{$item->SKU}}" id="id" />
@@ -134,14 +146,25 @@
                 <input type="number" id="Punto_de_reabastecimiento" class="form-control" placeholder="Telefono" value="{{$item->	Punto_de_reabastecimiento}}" />
                 <label class="form-label">Cuenta de activo de inventario</label>
                 <input type="number" id="Cuenta_de_activo_de_inventario" class="form-control" placeholder="Telefono" value="{{$item->Cuenta_de_activo_de_inventario}}" />
-                <br>
-
+                </div>
+            </div>
+</div>
+<br>
                 <button type="submit" class="btn btn-primary">Modificar el producto</button>
+                
                 @endforeach
+                
+             
             </form>
-            <button onclick="volver()" id="volver" class="btn btn-danger">volver</button>
+            <button onclick="volverproductos()" id="volver" class="btn btn-danger">volver</button>
+            </div>
+            </div>
 
-        </div>
+        <br>
+        <br>
+
+
+</div>
     </div>
     @else
     <script>

@@ -114,11 +114,26 @@
 <body>
     @if(Session::has('users.Usuario'))
     <div id="div">
-        <div class="mb-3">
-            <h1>Modificacion de proveedores</h1>
+    <div class="panel panel-inverse" data-sortable-id="form-stuff-3">
+            <div class="panel-heading">
+                <h5 class="panel-title">Modificar Proveedor</h5>
+
+                
+
+                
+
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
 
             <form data-parsley-validate="true" id="from1">
-
+            <div class="row mb-3">
+            
+            <div class="col-md-5">
+            <div class="mb-7px">
+            <br>
+            <label aling="center" class="form-label">CONTACTO:</label><br>
+            <br>
 
                 @foreach($proveedor as $item)
                 <input type="hidden" value="{{$item->Id_proveedor}}" id="id" />
@@ -132,8 +147,13 @@
                 <input type="text" id="telefono" class="form-control" placeholder="Telefono" value="{{$item->Telefono}}" />
                 <label class="form-label">Celular</label>
                 <input type="text" id="celular" class="form-control" placeholder="Celular" value="{{$item->Celular}}" />
-                <br>
-                <label aling="center" class="form-label">DIRECCION:</label><br>
+                </div>
+</div>
+<div class="col-md-5">          
+<div class="mb-7px">            
+            <br>
+            <label aling="center" class="form-label">DIRECCION:</label><br>
+            <br>
                 <label class="form-label">Calle</label>
                 <input type="text" id="calle" class="form-control" placeholder="Calle" value="{{$item->Calle}}" />
                 <label class="form-label">Numero</label>
@@ -146,14 +166,22 @@
                 <input type="text" id="pais" class="form-control" placeholder="Pais" value="{{$item->Pais}}" />
                 <label class="form-label">Codigo postal</label>
                 <input type="text" id="codigo_postal" class="form-control" placeholder="Codigo Postal" value="{{$item->Codigo_postal}}" />
-                <br>
-
+                </div>
+            </div>
+</div>
+            <br>
                 <button type="submit" class="btn btn-primary">Modificar el proveedor</button>
                 @endforeach
             </form>
             <button onclick="volver()" id="volver" class="btn btn-danger">volver</button>
+            </div>
+            </div>
 
-        </div>
+        <br>
+        <br>
+
+
+</div>
     </div>
 
     @else

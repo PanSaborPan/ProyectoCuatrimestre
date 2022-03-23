@@ -157,7 +157,7 @@
 
 
                 <div class="panel-heading-btn">
-                    <a onclick="showform()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+                    <a onclick="showformP()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
                 </div>
 
             </div>
@@ -220,8 +220,8 @@
 
 
 
-                                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
-                                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->SKU}}"><i class="fas fa-pen"></i></button>
+                                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->SKU}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
 
                                     </td>
 

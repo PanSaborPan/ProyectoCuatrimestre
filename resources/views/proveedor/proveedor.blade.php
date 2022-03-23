@@ -187,8 +187,8 @@
 
 
 
-                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
-                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_proveedor}}"><i class="fas fa-pen"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_proveedor}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
 
                                 </td>
 
