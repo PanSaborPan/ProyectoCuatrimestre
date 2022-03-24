@@ -27,8 +27,8 @@
 <script src="{{ asset('js/vendor.min.js') }}"></script>
 <script src="{{ asset('js/app.min.js') }}"></script>
 <script src="{{ asset('js/theme/default.min.js') }}"></script>
-<script src="{{ asset('js/demo/render.highlight.js')}}"></script>
-<script src="{{ asset('plugins/@highlightjs/cdn-assets/highlight.min.js')}}"></script>
+
+
 
 <script src="{{ asset('js/vendor.min.js') }}"></script>
 <script src="{{ asset('js/app.min.js') }}"></script>
@@ -52,6 +52,7 @@
 
 <script>
     function usuarios() {
+    
         $("#content-top").load("{{ url('/Usuarios') }}");
     };
 
@@ -61,10 +62,10 @@
 
     function clientes() {
         $("#content-top").load("{{ url('/Clientes') }}");
-    };
 
     function setin() {
         $("#content-top").load("{{ url('/Setin') }}");
+
     };
 
     function ventas() {
@@ -73,6 +74,12 @@
 
     function productos() {
         $("#content-top").load("{{ url('/Productos') }}");
+
+    };
+
+    function carrito() {
+        $("#content-top").load("{{ url('/cart-show') }}");
+
     };
    
     
@@ -188,6 +195,7 @@
                                         {{Session::get('users.Usuario')}}
                                     </div>
 
+
                                 </div>
 
                             </div>
@@ -289,6 +297,18 @@
                             </a>
 
                         </div>
+
+                        <div class="menu-item">
+                            <a href="{{route('show')}}" class="menu-link">
+                                <div class="menu-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <div class="menu-text">Carrito</div>
+                            </a>
+
+                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -306,16 +326,10 @@
         @show
 
 
-        @show
-
-
 
     </div>
-    <footer>
-        <div id="footer" class="app-footer m-0">
-            &copy; 2021 TNS Custom Bussiness All Right Reserved
-        </div>
-    </footer>
+
+
     @else
     <script>
         window.location = "{{ route('home') }}";

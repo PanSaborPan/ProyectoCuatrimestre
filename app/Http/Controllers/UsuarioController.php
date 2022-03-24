@@ -15,11 +15,13 @@ class UsuarioController extends Controller
 
         return view('usuario.usuarios', compact('usuarios'));
     }
-// Funcion para la vista de formulario de Usuarios
-public function formulariousuario()
-{
-    return view('usuario.FormularioUsuarios');
-}
+
+    // Funcion para la vista de formulario de Usuarios
+    public function formulariousuario()
+    {
+        return view('usuario.FormularioUsuarios');
+    }
+
     public function forumlario()
     {
         return view('usuario.usuarios', compact('usuarios'));
@@ -67,7 +69,6 @@ public function formulariousuario()
 
         Usuario::updateData($usuarios->Id_usuario, $data);
     }
-
 
     public function edit($id)
     {

@@ -118,13 +118,29 @@
 <body>
     @if(Session::has('users.Usuario'))
     <div id="div">
-        <div class="mb-3">
-            <h1>Modificacion de clientes</h1>
+    <div class="panel panel-inverse" data-sortable-id="form-stuff-3">
+            <div class="panel-heading">
+                <h5 class="panel-title">Modificar Cliente</h5>
 
+                
+
+                
+
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                
             <form data-parsley-validate="true" id="from1">
 
 
                 @foreach($clientes as $item)
+                <div class="row mb-3">
+            
+            <div class="col-md-5">
+            <div class="mb-7px">
+            <br>
+            <label aling="center" class="form-label">CONTACTO:</label><br>
+            <br>
                 <input type="hidden" value="{{$item->Id_cliente}}" id="id" />
                 <label class="form-label">Nombre de contacto</label>
                 <input class="form-control" id="Nombre_de_contacto" type="text" placeholder="Nombre" value="{{$item->Nombre_de_contacto}}" />
@@ -142,8 +158,13 @@
                 <input type="text" id="Correo_electronico_1" class="form-control" placeholder="Telefono" value="{{$item->Correo_electronico_1}}" />
                 <label class="form-label">Correo electronico 2</label>
                 <input type="text" id="Correo_electronico_2" class="form-control" placeholder="Telefono" value="{{$item->Correo_electronico_2}}" />
-                <br>
-                <label aling="center" class="form-label">DIRECCION:</label><br>
+                </div>
+</div>
+<div class="col-md-5">          
+<div class="mb-7px">            
+            <br>
+            <label aling="center" class="form-label">DIRECCION:</label><br>
+            <br>
                 <label class="form-label">Calle</label>
                 <input type="text" id="Calle" class="form-control" placeholder="Celular" value="{{$item->Calle}}" />
                 <label class="form-label">Numero</label>
@@ -156,15 +177,29 @@
                 <input type="text" id="Estado" class="form-control" placeholder="Estado" value="{{$item->Estado}}" />
                 <label class="form-label">Pais</label>
                 <input type="text" id="Pais" class="form-control" placeholder="Pais" value="{{$item->Pais}}" />
-                <br>
-
+                </div>
+            </div>
+</div>
+            <br>
                 <button type="submit" class="btn btn-primary">Modificar el cliente</button>
+                
                 @endforeach
             </form>
             <button onclick="volver()" id="volver" class="btn btn-danger">volver</button>
+            </div>
+            </div>
 
-        </div>
+        <br>
+        <br>
+
+
+</div>
     </div>
+    <footer>
+        <div id="footer" class="app-footer m-0">
+            &copy; 2021 TNS Custom Bussiness All Right Reserved
+        </div>
+    </footer>
     @else
     <script>
         window.location = "{{ route('home') }}";

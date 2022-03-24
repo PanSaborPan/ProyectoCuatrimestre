@@ -157,7 +157,9 @@
 
 
                 <div class="panel-heading-btn">
-                    <a onclick="showform()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+
+                    <a onclick="showformP()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+
                 </div>
 
             </div>
@@ -186,7 +188,9 @@
                             @foreach($productos as $item)
                             @if($item->Existencias_actuales
                             <= 100) <tr class="fradeX odd">
-                                <td style="display: none; background-color:yellow">{{$item->SKU}}</td>
+
+                                <td style="display: none; background-color:yellow">{{$item->id}}</td>
+
                                 <td style="display: none; background-color:yellow">{{$item->Nombre_del_producto}}</td>
                                 <td style="display: none; background-color:yellow">{{$item->Descripcion_del_producto}}</td>
                                 <td style="display: none; background-color:yellow">{{$item->Clave_del_sat}}</td>
@@ -198,15 +202,19 @@
                                 <td style="display: none; background-color:yellow">{{$item->Cuenta_de_activo_de_inventario}}</td>
                                 <td style="display: none; background-color:yellow">
 
-                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
-                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+
+                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->id}}"><i class="fas fa-pen"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->id}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+
 
                                 </td>
 
                                 </tr>
                                 @else
                                 <tr class="fradeX odd">
-                                    <td style="display: none;">{{$item->SKU}}</td>
+
+                                    <td style="display: none;">{{$item->id}}</td>
+
                                     <td style="display: none;">{{$item->Nombre_del_producto}}</td>
                                     <td style="display: none;">{{$item->Descripcion_del_producto}}</td>
                                     <td style="display: none;">{{$item->Clave_del_sat}}</td>
@@ -220,8 +228,11 @@
 
 
 
-                                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
-                                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+
+
+                                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->id}}"><i class="fas fa-pen"></i></button>
+                                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->id}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+
 
                                     </td>
 
@@ -233,12 +244,14 @@
                 </div>
             </div>
         </div>
+
+        <footer>
+            <div id="footer" class="app-footer m-0">
+                &copy; 2021 TNS Custom Bussiness All Right Reserved
+            </div>
+        </footer>
     </div>
-    <footer>
-        <div id="footer" class="app-footer m-0">
-            &copy; 2021 TNS Custom Bussiness All Right Reserved
-        </div>
-    </footer>
+
     @else
     <script>
         window.location = "{{ route('home') }}";

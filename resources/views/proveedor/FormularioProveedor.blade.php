@@ -125,10 +125,24 @@
     @if(Session::has('users.Usuario'))
     <div id="div">
 
-        <h1>Captura de Proveedores</h1>
-        <form id="from1">
+    <div class="panel panel-inverse" data-sortable-id="form-stuff-3">
+            <div class="panel-heading">
+                <h5 class="panel-title">Crear Proveedor</h5>
+
+                </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                
+                <form id="from1">
 
             @csrf
+            <div class="row mb-3">
+            
+            <div class="col-md-5">
+            <div class="mb-7px">
+            <br>
+            <label aling="center" class="form-label">CONTACTO:</label><br>
+            <br>
 
             <label class="form-label">Nombre</label>
             <input class="form-control" id="nombre" type="text" placeholder="Nombre" required />
@@ -140,6 +154,12 @@
             <input type="text" id="telefono" class="form-control" placeholder="Telefono" required />
             <label class="form-label">Celular</label>
             <input type="text" id="celular" class="form-control" placeholder="Celular" required />
+
+            </div>
+</div>
+<div class="col-md-5">          
+<div class="mb-7px">  
+
             <br>
             <label aling="center" class="form-label">DIRECCION:</label><br>
             <br>
@@ -157,21 +177,34 @@
             <label class="form-label">Codigo postal</label>
             <input type="text" id="codigo_postal" class="form-control" placeholder="Codigo Postal" required />
 
+            </div>
+            </div>
+</div>
+
             <br>
             <button id="subir" type="submit" class="btn btn-primary">Crear nuevo proveedor</button>
 
             <button onclick="volverproveedor()" id="volver" class="btn btn-danger">volver</button>
-        </form>
 
-
-        <br>
-        <br>
+            </form>
 
 
 
+<br>
+<br>
 
+
+
+        <footer>
+            <div id="footer" class="app-footer m-0">
+                &copy; 2021 TNS Custom Bussiness All Right Reserved
+            </div>
+        </footer>
 
     </div>
+
+
+
     @else
     <script>
         window.location = "{{ route('home') }}";

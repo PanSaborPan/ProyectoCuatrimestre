@@ -17,10 +17,12 @@ class ProductosController extends Controller
     }
 
     // Funcion para la vista de formulario de Productos
-public function formularioproductos()
-{
-    return view('productos.FormularioProductos');
-}
+
+    public function formularioproductos()
+    {
+        return view('productos.FormularioProductos');
+    }
+
 
     public function create(Request $request)
     {
@@ -46,7 +48,7 @@ public function formularioproductos()
     public function edit($id)
     {
         $productos = DB::table('productos')
-            ->where('SKU', $id)
+            ->where('id', $id)
             ->get();
 
         return view('productos.ModificarProductos', compact('productos'));
@@ -55,7 +57,7 @@ public function formularioproductos()
     public function update(Request $request, productos $productos)
     {
 
-        $productos->SKU = $request->id;
+        $productos->id = $request->id;
         $productos->Nombre_del_producto = $request->Nombre_del_producto;
         $productos->Descripcion_del_producto = $request->Descripcion_del_producto;
         $productos->Clave_del_sat = $request->Clave_del_sat;
@@ -72,7 +74,7 @@ public function formularioproductos()
             'Existencias_actuales' => $productos->Existencias_actuales, 'Punto_de_reabastecimiento' =>  $productos->Punto_de_reabastecimiento, 'Cuenta_de_activo_de_inventario' => $productos->Cuenta_de_activo_de_inventario
         );
 
-        productos::updateData($productos->SKU, $data);
+        productos::updateData($productos->id, $data);
     }
 
     public function delete($id)
