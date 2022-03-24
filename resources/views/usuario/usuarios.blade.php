@@ -153,17 +153,25 @@
                                 <td style="display: none;">{{$item->Contraseña}}</td>
                                 <td style="display: none;">
 
-
-
                                     <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_usuario}}"><i class="fas fa-pen"></i></button>
-                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_usuario}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_usuario}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+
 
                                 </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            </tr>
-            @endforeach
-            </table>
         </div>
+        <footer>
+            <div id="footer" class="app-footer m-0">
+                &copy; 2021 TNS Custom Bussiness All Right Reserved
+            </div>
+        </footer>
     </div>
+
+
+
 </body>

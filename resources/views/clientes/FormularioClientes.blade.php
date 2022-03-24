@@ -178,6 +178,7 @@
 <div class="col-md-5">          
 <div class="mb-7px">            
             <br>
+
             <label aling="center" class="form-label">DIRECCION:</label><br>
             <br>
             
@@ -212,6 +213,11 @@
 
 </div>
     </div>
+    <footer>
+        <div id="footer" class="app-footer m-0">
+            &copy; 2021 TNS Custom Bussiness All Right Reserved
+        </div>
+    </footer>
     @else
     <script>
         window.location = "{{ route('home') }}";

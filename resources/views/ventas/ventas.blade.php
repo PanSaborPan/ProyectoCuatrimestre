@@ -165,8 +165,8 @@
 
 
 
-                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
-                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Folio}}"><i class="fas fa-pen"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Folio}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
 
                                 </td>
 
@@ -176,4 +176,9 @@
                 </div>
             </div>
         </div>
+        <footer>
+            <div id="footer" class="app-footer m-0">
+                &copy; 2021 TNS Custom Bussiness All Right Reserved
+            </div>
+        </footer>
 </body>

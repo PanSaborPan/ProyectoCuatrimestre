@@ -8,7 +8,9 @@ use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\VentasController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\controlerwelcome;
-
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\Carrito;
+use App\Http\Controllers\PdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,3 +83,12 @@ Route::get('/BorrarProductos/{id}', [ProductosController::class, 'delete'])->nam
 //Ruta de Formulario Productos
 Route::get('/Productos/FormularioProductos', [ProductosController::class, 'formularioproductos'])->name('producto.forms');
 //Acaba modulo productos
+
+
+//MODULO DE CARRITO
+Route::get('/pdf', [PdfController::class, 'PDF'])->name('descarga_pdf');
+Route::get('/cart-show', [CartController::class, 'Index'])->name('show');
+Route::post('/cart-add', [CartController::class, 'Add'])->name('cart.add');
+Route::get('/Carrito', [CartController::class, 'Mostrarcarrito'])->name('carro');
+//Route::post('/cart-add', [CartController::class])->name('cart.clear');
+Route::post('/cart-remove', [CartController::class, 'removeItem'])->name('cart.removeitem');

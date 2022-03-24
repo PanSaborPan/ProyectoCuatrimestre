@@ -198,7 +198,13 @@
                 </div>
             </div>
         </div>
+        <footer>
+            <div id="footer" class="app-footer m-0">
+                &copy; 2021 TNS Custom Bussiness All Right Reserved
+            </div>
+        </footer>
     </div>
+
     @else
     <script>
         window.location = "{{ route('home') }}";
