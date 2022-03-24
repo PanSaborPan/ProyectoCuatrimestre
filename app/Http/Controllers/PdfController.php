@@ -16,6 +16,7 @@ class PdfController extends Controller
 
     public function PDFcarrito()
     {
+
         $pdf = PDF::loadview('prueba');
         return $pdf->stream('prueba.pdf');
     }
