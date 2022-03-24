@@ -115,7 +115,7 @@
 
 
                 @foreach($productos as $item)
-                <input type="hidden" value="{{$item->SKU}}" id="id" />
+                <input type="hidden" value="{{$item->id}}" id="id" />
                 <label class="form-label">Nombre del producto</label>
                 <input class="form-control" id="Nombre_del_producto" type="text" placeholder="Nombre" value="{{$item->Nombre_del_producto}}" />
                 <label class="form-label">Descriptcion del producto</label>
@@ -142,11 +142,18 @@
             <button onclick="volver()" id="volver" class="btn btn-danger">volver</button>
 
         </div>
+
     </div>
+
     @else
     <script>
         window.location = "{{ route('home') }}";
         alert('no has iniciado session');
     </script>
     @endif
+    <footer>
+        <div id="footer" class="app-footer m-0">
+            &copy; 2021 TNS Custom Bussiness All Right Reserved
+        </div>
+    </footer>
 </body>

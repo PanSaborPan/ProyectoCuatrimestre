@@ -13,11 +13,11 @@ class productos extends Model
 
     public static function updateData($id, $data)
     {
-        DB::table('productos')->where('SKU', $id)->update($data);
+        DB::table('productos')->where('id', $id)->update($data);
     }
 
     public static function deleteData($id = 0)
     {
-        DB::table('productos')->where('SKU', '=', $id)->delete();
+        DB::table('productos')->where('id', '=', $id)->delete();
     }
 }

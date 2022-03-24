@@ -152,6 +152,7 @@
             <label class="form-label">Correo electronico 2</label>
             <input type="email" id="Correo_electronico_2" class="form-control" placeholder="Correo2@hotmail.com" required />
             <br>
+
             <label aling="center" class="form-label">DIRECCION:</label><br>
             <br>
             <label class="form-label">Calle</label>
@@ -179,6 +180,11 @@
 
 
     </div>
+    <footer>
+        <div id="footer" class="app-footer m-0">
+            &copy; 2021 TNS Custom Bussiness All Right Reserved
+        </div>
+    </footer>
     @else
     <script>
         window.location = "{{ route('home') }}";
