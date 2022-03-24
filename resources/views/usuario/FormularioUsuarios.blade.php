@@ -107,14 +107,31 @@
 @show
 
 <body>
+<div id="div">
+    <div class="panel panel-inverse" data-sortable-id="form-stuff-3">
+            <div class="panel-heading">
+                <h5 class="panel-title">Crear Usuario</h5>
 
-    <div id="div">
+                
 
-        <h1>Captura de usuarios</h1>
-        <form id="from1">
+                
+
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                
+                <form id="from1">
 
             @csrf
-
+            
+          
+            
+            
+            <div class="row mb-3">
+            
+            <div class="col-md-5">
+            <div class="mb-7px">
+                <br>
             <label class="form-label">Nombre</label>
             <input class="form-control" id="nombre" type="text" placeholder="Nombre" required />
             <label class="form-label">Area</label>
@@ -123,13 +140,21 @@
             <input type="text" id="usuario" class="form-control mb-5px" placeholder="Usuario" required />
             <label class="form-label">Contraseña</label>
             <input type="password" id="password" class="form-control" placeholder="Contraseña" required />
+            </div>
+            </div>
+</div>
             <br>
-            <button id="subir" type="submit" class="btn btn-primary">Crear nuevo usuario</button>
+            <button id="subir" type="submit" class="btn btn-primary">Crear nuevo cliente</button>
+            <button onclick="volver()" id="volvercli" class="btn btn-danger">volver</button>
+
         </form>
 
-        <button onclick="volver()" id="volver" class="btn btn-danger">volver</button>
+        </div>
+            </div>
+
         <br>
         <br>
+
 
 
         <footer>
@@ -138,7 +163,8 @@
             </div>
         </footer>
 
-    </div>
 
+</div>
+    </div>
 
 </body>

@@ -39,7 +39,7 @@
 <script type="text/javascript">
     $('#data-table-default').DataTable({
         responsive: true
-    });
+    });     
 </script>
 
 <script>

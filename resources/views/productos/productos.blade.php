@@ -220,8 +220,10 @@
 
 
 
+
                                         <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->id}}"><i class="fas fa-pen"></i></button>
                                         <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->id}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+
 
                                     </td>
 

@@ -67,7 +67,6 @@
 
 <script>
     function showform() {
-
         var url = '{{ route("user.forms") }}';
         $("#div").load(url);
     };
@@ -153,8 +152,10 @@
                                 <td style="display: none;">{{$item->Usuario}}</td>
                                 <td style="display: none;">{{$item->Contraseña}}</td>
                                 <td style="display: none;">
+
                                     <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_usuario}}"><i class="fas fa-pen"></i></button>
                                     <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_usuario}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+
 
                                 </td>
                             </tr>

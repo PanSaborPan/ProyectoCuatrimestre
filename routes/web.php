@@ -41,7 +41,7 @@ Route::put('/ModificarUsuarios/{Usuarios}', [UsuarioController::class, 'update']
 Route::get('/BorrarUsuarios/{id}', [UsuarioController::class, 'delete'])->name('users.delete');
 //Ruta de Formulario Usuarios
 Route::get('/Usuarios/FormularioUsuario', [UsuarioController::class, 'formulariousuario'])->name('user.forms');
-//Acaba modulo usuarios
+//Acaba modulo usuario
 
 
 //Empieza proveedor
@@ -51,7 +51,7 @@ Route::get('/ModificarProveedor/{id}/edit', [ProveedorController::class, 'edit']
 Route::put('/ModificarProveedor/{Proveedor}', [ProveedorController::class, 'update'])->name('proveedor.update');
 Route::get('/BorrarProveedor/{id}', [ProveedorController::class, 'delete'])->name('proveedor.delete');
 //Ruta de Formulario Proveedores
-Route::get('/Proveedor/FormularioProveedor', [ProveedorController::class, 'formularioproveedor'])->name('proveedor.forms');
+Route::get('/Proveedor/FormularioProveedor', [ProveedorController::class, 'FormularioProveedor'])->name('proveedor.forms');
 //Acaba proveedor
 
 //Empieza clientes

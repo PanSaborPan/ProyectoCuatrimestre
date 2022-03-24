@@ -152,12 +152,27 @@
     @if(Session::has('users.Usuario'))
 
     <div id="div">
+    <div class="panel panel-inverse" data-sortable-id="form-stuff-3">
+            <div class="panel-heading">
+                <h5 class="panel-title">Crear Producto</h5>
 
-        <h1>Captura de Productos</h1>
-        <form id="from1">
+                
 
+                
+
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                
+                <form id="from1">
             @csrf
-            <span class="badge bg-danger rounded-pill">Rojo:para poder borrar o bajos de stock</span>
+            <div class="row mb-3">
+            
+            <div class="col-md-5">
+            <div class="mb-7px">
+            
+            <br>
+
             <label class="form-label">Nombre del producto</label>
             <input class="form-control" id="Nombre_del_producto" type="text" placeholder="Nombre del producto" required />
             <label class="form-label">Descriptcion del producto</label>
@@ -176,17 +191,22 @@
             <input type="number" id="Punto_de_reabastecimiento" class="form-control" placeholder="Puntos de reabastecimiento" required />
             <label class="form-label">Cuenta de activo de inventario</label>
             <input type="number" id="Cuenta_de_activo_de_inventario" class="form-control" placeholder="Cuenta de activo de inventario" required />
+            </div>
+            </div>
+</div>
             <br>
-            <br>
-            <button id="subir" type="submit" class="btn btn-primary">Crear nuevo producto</button>
-
+            <button id="subir" type="submit" class="btn btn-primary">Crear nuevo Producto</button>
             <button onclick="volverproductos()" id="volver" class="btn btn-danger">volver</button>
 
         </form>
 
+        </div>
+            </div>
 
         <br>
         <br>
+
+
 
 
 
