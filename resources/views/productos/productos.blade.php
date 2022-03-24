@@ -186,7 +186,7 @@
                             @foreach($productos as $item)
                             @if($item->Existencias_actuales
                             <= 100) <tr class="fradeX odd">
-                                <td style="display: none; background-color:yellow">{{$item->SKU}}</td>
+                                <td style="display: none; background-color:yellow">{{$item->id}}</td>
                                 <td style="display: none; background-color:yellow">{{$item->Nombre_del_producto}}</td>
                                 <td style="display: none; background-color:yellow">{{$item->Descripcion_del_producto}}</td>
                                 <td style="display: none; background-color:yellow">{{$item->Clave_del_sat}}</td>
@@ -198,15 +198,15 @@
                                 <td style="display: none; background-color:yellow">{{$item->Cuenta_de_activo_de_inventario}}</td>
                                 <td style="display: none; background-color:yellow">
 
-                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->SKU}}"><i class="fas fa-pen"></i></button>
-                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->SKU}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->id}}"><i class="fas fa-pen"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->id}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
 
                                 </td>
 
                                 </tr>
                                 @else
                                 <tr class="fradeX odd">
-                                    <td style="display: none;">{{$item->SKU}}</td>
+                                    <td style="display: none;">{{$item->id}}</td>
                                     <td style="display: none;">{{$item->Nombre_del_producto}}</td>
                                     <td style="display: none;">{{$item->Descripcion_del_producto}}</td>
                                     <td style="display: none;">{{$item->Clave_del_sat}}</td>
@@ -220,8 +220,8 @@
 
 
 
-                                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->SKU}}"><i class="fas fa-pen"></i></button>
-                                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->SKU}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->id}}"><i class="fas fa-pen"></i></button>
+                                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->id}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
 
                                     </td>
 
