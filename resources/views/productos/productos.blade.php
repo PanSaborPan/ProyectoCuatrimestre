@@ -157,7 +157,7 @@
 
 
                 <div class="panel-heading-btn">
-                    <a onclick="showform()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
+                    <a onclick="showformP()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
                 </div>
 
             </div>
@@ -198,8 +198,8 @@
                                 <td style="display: none; background-color:yellow">{{$item->Cuenta_de_activo_de_inventario}}</td>
                                 <td style="display: none; background-color:yellow">
 
-                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
-                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->SKU}}"><i class="fas fa-pen"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->SKU}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
 
                                 </td>
 
@@ -220,8 +220,8 @@
 
 
 
-                                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
-                                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->SKU}}"><i class="fas fa-pen"></i></button>
+                                        <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->SKU}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
 
                                     </td>
 
@@ -233,7 +233,13 @@
                 </div>
             </div>
         </div>
+        <footer>
+            <div id="footer" class="app-footer m-0">
+                &copy; 2021 TNS Custom Bussiness All Right Reserved
+            </div>
+        </footer>
     </div>
+
     @else
     <script>
         window.location = "{{ route('home') }}";
