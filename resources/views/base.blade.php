@@ -13,7 +13,7 @@
     <link href="{{ asset('css/default/app.min.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 
-    
+
     <link href="{{ asset('plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-fixedcolumns-bs4/css/fixedColumns.bootstrap4.min.css') }}" rel="stylesheet" />
@@ -52,7 +52,7 @@
 
 <script>
     function usuarios() {
-    
+
         $("#content-top").load("{{ url('/Usuarios') }}");
     };
 
@@ -62,6 +62,7 @@
 
     function clientes() {
         $("#content-top").load("{{ url('/Clientes') }}");
+    };
 
     function setin() {
         $("#content-top").load("{{ url('/Setin') }}");
@@ -81,26 +82,8 @@
         $("#content-top").load("{{ url('/cart-show') }}");
 
     };
-   
-    
-    
 </script>
 
-<script>
-    function clickaction(b) {
-        var url = '{{ route("users.edit2", ":id") }}';
-        url = url.replace(':id', b.value);
-        $("#content-top").load(url);
-    };
-</script>
-<script>
-    function clickaction2(b) {
-
-        var url = '{{ route("users.edit", ":id") }}';
-        url = url.replace(':id', {{Session::get('users.Id_usuario')}});
-        $("#content-top").load(url);
-    };
-</script>
 <script>
     function showform() {
 
@@ -204,12 +187,12 @@
                         </div>
 
                     </div>
-                    
+
                     <div class="menu-header">Profile Settings</div>
                     <div id="appSidebarProfileMenu">
 
 
-                       <!-- <div class="menu-item ">
+                        <!-- <div class="menu-item ">
                             <button class="menu-link" id='Modificar' onclick="clickaction(this)" value="{{Session::get('users.Id_usuario')}}">
                             <div class="menu-icon">
                                     <i class="fa fa-cog"></i>
@@ -217,9 +200,9 @@
                                 <div class="menu-text">Settings</div>
                             </button>
                         </div> -->
-                        
+
                         <div class="menu-item ">
-                            <a  onclick="clickaction2(this)"  value="{{Session::get('users.Id_usuario')}}" class="menu-link" id='Modificar'>
+                            <a onclick="setin()" value="{{Session::get('users.Id_usuario')}}" class="menu-link" id='Modificar'>
                                 <div class="menu-icon">
                                     <i class="fa fa-cog"></i>
                                 </div>
@@ -227,18 +210,7 @@
                             </a>
 
                         </div>
-                        <div class="menu-item">
-                            <a href="#" class="menu-link">
-                                <div class="menu-icon"><i class="fa fa-pencil-alt"></i></div>
-                                <div class="menu-text"> Send Feedback</div>
-                            </a>
-                        </div>
-                        <div class="menu-item pb-5px">
-                            <a href="#" class="menu-link">
-                                <div class="menu-icon"><i class="fa fa-question-circle"></i></div>
-                                <div class="menu-text"> Helps</div>
-                            </a>
-                        </div>
+
                         <div class="menu-divider m-0"></div>
                     </div>
                     <div class="menu-header">Navigation</div>

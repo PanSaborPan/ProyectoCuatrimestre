@@ -34,9 +34,8 @@ Route::get('/welcome', [controlerwelcome::class, 'welco']);
 
 
 //Empieza modulo usuarios
-Route::get('/Setin', [UsuarioController::class, 'Setin']);
-Route::get('/Setin/{id}/edit2', [UsuarioController::class, 'edit2'])->name('users.edit2');
-Route::put('/Setin/{Usuarios}', [UsuarioController::class, 'update2'])->name('users.update2');
+
+Route::get('/Setin', [UsuarioController::class, 'edit2'])->name('users.update2');
 Route::get('/Usuarios', [UsuarioController::class, 'index']);
 Route::post('/Usuarios', [UsuarioController::class, 'create'])->name('users.create');
 Route::get('/ModificarUsuarios/{id}/edit', [UsuarioController::class, 'edit'])->name('users.edit');
@@ -100,4 +99,3 @@ Route::post('/cart-add', [CartController::class, 'Add'])->name('cart.add');
 Route::get('/Carrito', [CartController::class, 'Mostrarcarrito'])->name('carro');
 //Route::post('/cart-add', [CartController::class])->name('cart.clear');
 Route::post('/cart-remove', [CartController::class, 'removeItem'])->name('cart.removeitem');
-

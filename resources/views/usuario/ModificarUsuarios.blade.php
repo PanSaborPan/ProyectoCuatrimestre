@@ -61,6 +61,7 @@
         $('#from1').on('submit', function(e) {
             e.preventDefault();
 
+
             let Nombre = $('#nombre').val();
             let Area = $('#area').val();
             let Usuario = $('#usuario').val();
@@ -86,6 +87,7 @@
                 },
                 success: function(response) {
                     console.log(response);
+
                     alert('Usuario se modifico correctamente');
                     $("#div").load("{{ url('/Usuarios') }}");
                 },
@@ -102,50 +104,50 @@
 </head>
 
 <body>
-<div id="div">
-    <div class="panel panel-inverse" data-sortable-id="form-stuff-3">
+    <div id="div">
+        <div class="panel panel-inverse" data-sortable-id="form-stuff-3">
             <div class="panel-heading">
                 <h5 class="panel-title"> Modificar Usuario</h5>
 
-                
 
-                
+
+
 
             </div>
             <div class="panel-body">
                 <div class="table-responsive">
 
-            <form data-parsley-validate="true" id="from1">
-            <div class="row mb-3">
-            
-            <div class="col-md-5">
-            <div class="mb-7px">
-            
-            <br>
+                    <form data-parsley-validate="true" id="from1">
+                        <div class="row mb-3">
 
-                @foreach($Usuarios as $item)
-                <input type="hidden" value="{{$item->Id_usuario}}" id="id" />
-                <label class="form-label">Nombre</label>
-                <input class="form-control" id="nombre" type="text" placeholder="Nombre" value="{{$item->Nombre}}" />
-                <label class="form-label">Area</label>
-                <input class="form-control" id="area" type="text" placeholder="Area" value="{{$item->Area}}" />
-                <label class="form-label">Usuario</label>
-                <input type="text" id="usuario" class="form-control mb-5px" placeholder="Usuario" value="{{$item->Usuario}}" />
-                <label class="form-label">Contraseña</label>
-                <input type="password" id="password" class="form-control" placeholder="Contraseña" value="{{$item->Contraseña}}" />
+                            <div class="col-md-5">
+                                <div class="mb-7px">
+
+                                    <br>
+
+                                    @foreach($Usuarios as $item)
+                                    <input type="hidden" value="{{$item->Id_usuario}}" id="id" />
+                                    <label class="form-label">Nombre</label>
+                                    <input class="form-control" id="nombre" type="text" placeholder="Nombre" value="{{$item->Nombre}}" />
+                                    <label class="form-label">Area</label>
+                                    <input class="form-control" id="area" type="text" placeholder="Area" value="{{$item->Area}}" />
+                                    <label class="form-label">Usuario</label>
+                                    <input type="text" id="usuario" class="form-control mb-5px" placeholder="Usuario" value="{{$item->Usuario}}" />
+                                    <label class="form-label">Contraseña</label>
+                                    <input type="password" id="password" class="form-control" placeholder="Contraseña" value="{{$item->Contraseña}}" />
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Modificar el usuarios</button>
+                        @endforeach
+                    </form>
+                    <button onclick="volver()" id="volver" class="btn btn-danger">volver</button>
                 </div>
             </div>
-</div>
-<br>
-                <button type="submit" class="btn btn-primary">Modificar el usuarios</button>
-                @endforeach
-            </form>
-            <button onclick="volver()" id="volver" class="btn btn-danger">volver</button>
-            </div>
-            </div>
 
-        <br>
-        <br>
+            <br>
+            <br>
 
 
 
