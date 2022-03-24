@@ -34,6 +34,9 @@ Route::get('/welcome', [controlerwelcome::class, 'welco']);
 
 
 //Empieza modulo usuarios
+Route::get('/Setin', [UsuarioController::class, 'Setin']);
+Route::get('/Setin/{id}/edit2', [UsuarioController::class, 'edit2'])->name('users.edit2');
+Route::put('/Setin/{Usuarios}', [UsuarioController::class, 'update2'])->name('users.update2');
 Route::get('/Usuarios', [UsuarioController::class, 'index']);
 Route::post('/Usuarios', [UsuarioController::class, 'create'])->name('users.create');
 Route::get('/ModificarUsuarios/{id}/edit', [UsuarioController::class, 'edit'])->name('users.edit');
@@ -41,7 +44,9 @@ Route::put('/ModificarUsuarios/{Usuarios}', [UsuarioController::class, 'update']
 Route::get('/BorrarUsuarios/{id}', [UsuarioController::class, 'delete'])->name('users.delete');
 //Ruta de Formulario Usuarios
 Route::get('/Usuarios/FormularioUsuario', [UsuarioController::class, 'formulariousuario'])->name('user.forms');
+
 //Acaba modulo usuario
+
 
 
 //Empieza proveedor
@@ -51,7 +56,9 @@ Route::get('/ModificarProveedor/{id}/edit', [ProveedorController::class, 'edit']
 Route::put('/ModificarProveedor/{Proveedor}', [ProveedorController::class, 'update'])->name('proveedor.update');
 Route::get('/BorrarProveedor/{id}', [ProveedorController::class, 'delete'])->name('proveedor.delete');
 //Ruta de Formulario Proveedores
+
 Route::get('/Proveedor/FormularioProveedor', [ProveedorController::class, 'FormularioProveedor'])->name('proveedor.forms');
+
 //Acaba proveedor
 
 //Empieza clientes
@@ -82,6 +89,7 @@ Route::put('/ModificarProductos/{id}', [ProductosController::class, 'update'])->
 Route::get('/BorrarProductos/{id}', [ProductosController::class, 'delete'])->name('producto.delete');
 //Ruta de Formulario Productos
 Route::get('/Productos/FormularioProductos', [ProductosController::class, 'formularioproductos'])->name('producto.forms');
+
 //Acaba modulo productos
 
 
@@ -92,3 +100,4 @@ Route::post('/cart-add', [CartController::class, 'Add'])->name('cart.add');
 Route::get('/Carrito', [CartController::class, 'Mostrarcarrito'])->name('carro');
 //Route::post('/cart-add', [CartController::class])->name('cart.clear');
 Route::post('/cart-remove', [CartController::class, 'removeItem'])->name('cart.removeitem');
+

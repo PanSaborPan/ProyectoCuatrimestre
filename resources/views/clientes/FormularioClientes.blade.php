@@ -17,7 +17,7 @@
     <link href="{{ asset('plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/datatables.net-fixedcolumns-bs4/css/fixedColumns.bootstrap4.min.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('plugins/jquery-ui-dist/jquery-ui.min.css')}}" />
-   
+
 
 
     @show
@@ -131,6 +131,7 @@
     @if(Session::has('users.Usuario'))
 
     <div id="div">
+
     <div class="panel panel-inverse" data-sortable-id="form-stuff-3">
             <div class="panel-heading">
                 <h5 class="panel-title">Crear Cliente</h5>
@@ -158,21 +159,25 @@
             <label aling="center" class="form-label">CONTACTO:</label><br>
             <br>
             <label  class="form-label">Nombre de Contacto</label>
+
             <input class="form-control" id="Nombre_de_contacto" type="text" placeholder="Nombre de contacto" required />
             <label class="form-label">Nombre de empresa</label>
             <input class="form-control" id="Nombre_de_empresa" type="text" placeholder="Nombre de empreza" required />
             <label class="form-label">Razon social</label>
             <input type="text" id="Razonsocial" class="form-control mb-5px" placeholder="Razon social" required />
             <label class="form-label">RFC</label>
+
             <input type="text" id="Rfc" class="form-control" placeholder="RFC" required />          
             <label class="form-label">Telefono</label>
             <input type="text" id="Telefono" class="form-control" placeholder="Telefono" required />
             <label class="form-label">Movil</label>
             <input type="text" id="Movil" class="form-control" placeholder="Movil" required />
+
             <label class="form-label">Correo electronico 1</label>
             <input type="email" id="Correo_electronico_1" class="form-control" placeholder="Correo1@hotmail.com" required />
             <label class="form-label">Correo electronico 2</label>
             <input type="email" id="Correo_electronico_2" class="form-control" placeholder="Correo2@hotmail.com" required />
+
 </div>
 </div>
 <div class="col-md-5">          
@@ -182,6 +187,7 @@
             <label aling="center" class="form-label">DIRECCION:</label><br>
             <br>
             
+
             <label class="form-label">Calle</label>
             <input type="text" id="Calle" class="form-control" placeholder="Calle" required />
             <label class="form-label">Numero</label>
@@ -195,6 +201,8 @@
             <label class="form-label">Pais</label>
             <input type="text" id="Pais" class="form-control" placeholder="Pais" required />
 
+
+
 </div>
             </div>
 </div>
@@ -207,8 +215,10 @@
         </div>
             </div>
 
+
         <br>
         <br>
+
 
 
 </div>
@@ -218,6 +228,7 @@
             &copy; 2021 TNS Custom Bussiness All Right Reserved
         </div>
     </footer>
+
     @else
     <script>
         window.location = "{{ route('home') }}";

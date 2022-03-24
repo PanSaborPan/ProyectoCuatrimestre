@@ -12,6 +12,12 @@
     <link href="{{ asset('css/vendor.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/default/app.min.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+
+    
+    <link href="{{ asset('plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('plugins/datatables.net-fixedcolumns-bs4/css/fixedColumns.bootstrap4.min.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('plugins/jquery-ui-dist/jquery-ui.min.css')}}" />
     @show
 </head>
 
@@ -24,10 +30,29 @@
 
 
 
+<script src="{{ asset('js/vendor.min.js') }}"></script>
+<script src="{{ asset('js/app.min.js') }}"></script>
+<script src="{{ asset('js/theme/default.min.js') }}"></script>
+<script src="{{ asset('js/demo/render.highlight.js')}}"></script>
+<script src="{{ asset('plugins/@highlightjs/cdn-assets/highlight.min.js')}}"></script>
+<script src="{{ asset('plugins/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{ asset('plugins/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{ asset('plugins/jquery.maskedinput/src/jquery.maskedinput.js') }}"></script>
+
+
+
+<script type="text/javascript">
+    $('#data-table-default').DataTable({
+        responsive: true
+    });
+</script>
 
 <script>
     function usuarios() {
-
+    
         $("#content-top").load("{{ url('/Usuarios') }}");
     };
 
@@ -37,6 +62,10 @@
 
     function clientes() {
         $("#content-top").load("{{ url('/Clientes') }}");
+
+    function setin() {
+        $("#content-top").load("{{ url('/Setin') }}");
+
     };
 
     function ventas() {
@@ -45,20 +74,45 @@
 
     function productos() {
         $("#content-top").load("{{ url('/Productos') }}");
+
     };
 
     function carrito() {
         $("#content-top").load("{{ url('/cart-show') }}");
+
     };
+   
+    
+    
 </script>
 
+<script>
+    function clickaction(b) {
+        var url = '{{ route("users.edit2", ":id") }}';
+        url = url.replace(':id', b.value);
+        $("#content-top").load(url);
+    };
+</script>
+<script>
+    function clickaction2(b) {
 
+        var url = '{{ route("users.edit", ":id") }}';
+        url = url.replace(':id', {{Session::get('users.Id_usuario')}});
+        $("#content-top").load(url);
+    };
+</script>
+<script>
+    function showform() {
+
+        var url = '{{ route("user.forms") }}';
+        $("#div").load(url);
+    };
+</script>
 
 
 @show
 
 <body>
-
 
     @if(Session::has('users.Usuario'))
 
@@ -120,12 +174,9 @@
                         <a href="{{ route('home') }}" class="dropdown-item">Log Out</a>
                     </div>
                 </div>
-
             </div>
             <!-- END header-nav -->
-
         </div>
-
         <!-- [fin] header -->
         <!-- BEGIN #sidebar -->
         <div id="sidebar" class="app-sidebar">
@@ -144,6 +195,7 @@
                                         {{Session::get('users.Usuario')}}
                                     </div>
 
+
                                 </div>
 
                             </div>
@@ -152,13 +204,28 @@
                         </div>
 
                     </div>
+                    
                     <div class="menu-header">Profile Settings</div>
                     <div id="appSidebarProfileMenu">
-                        <div class="menu-item pt-5px">
-                            <a href="#" class="menu-link">
-                                <div class="menu-icon"><i class="fa fa-cog"></i></div>
+
+
+                       <!-- <div class="menu-item ">
+                            <button class="menu-link" id='Modificar' onclick="clickaction(this)" value="{{Session::get('users.Id_usuario')}}">
+                            <div class="menu-icon">
+                                    <i class="fa fa-cog"></i>
+                                </div>
+                                <div class="menu-text">Settings</div>
+                            </button>
+                        </div> -->
+                        
+                        <div class="menu-item ">
+                            <a  onclick="clickaction2(this)"  value="{{Session::get('users.Id_usuario')}}" class="menu-link" id='Modificar'>
+                                <div class="menu-icon">
+                                    <i class="fa fa-cog"></i>
+                                </div>
                                 <div class="menu-text">Settings</div>
                             </a>
+
                         </div>
                         <div class="menu-item">
                             <a href="#" class="menu-link">
@@ -230,6 +297,7 @@
                             </a>
 
                         </div>
+
                         <div class="menu-item">
                             <a href="{{route('show')}}" class="menu-link">
                                 <div class="menu-icon">
@@ -258,7 +326,9 @@
         @show
 
 
+
     </div>
+
 
     @else
     <script>

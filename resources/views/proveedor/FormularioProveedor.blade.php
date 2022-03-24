@@ -124,6 +124,7 @@
 
     @if(Session::has('users.Usuario'))
     <div id="div">
+
     <div class="panel panel-inverse" data-sortable-id="form-stuff-3">
             <div class="panel-heading">
                 <h5 class="panel-title">Crear Proveedor</h5>
@@ -142,6 +143,7 @@
             <br>
             <label aling="center" class="form-label">CONTACTO:</label><br>
             <br>
+
             <label class="form-label">Nombre</label>
             <input class="form-control" id="nombre" type="text" placeholder="Nombre" required />
             <label class="form-label">Compañia</label>
@@ -152,10 +154,12 @@
             <input type="text" id="telefono" class="form-control" placeholder="Telefono" required />
             <label class="form-label">Celular</label>
             <input type="text" id="celular" class="form-control" placeholder="Celular" required />
+
             </div>
 </div>
 <div class="col-md-5">          
 <div class="mb-7px">  
+
             <br>
             <label aling="center" class="form-label">DIRECCION:</label><br>
             <br>
@@ -172,13 +176,16 @@
             <input type="text" id="pais" class="form-control" placeholder="Pais" required />
             <label class="form-label">Codigo postal</label>
             <input type="text" id="codigo_postal" class="form-control" placeholder="Codigo Postal" required />
+
             </div>
             </div>
 </div>
+
             <br>
             <button id="subir" type="submit" class="btn btn-primary">Crear nuevo proveedor</button>
 
             <button onclick="volverproveedor()" id="volver" class="btn btn-danger">volver</button>
+
             </form>
 
 
@@ -195,6 +202,7 @@
         </footer>
 
     </div>
+
 
 
     @else

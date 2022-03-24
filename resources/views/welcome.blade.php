@@ -15,13 +15,6 @@
 
 
 
-
-
-
-
-
-
-
 @section('container')
 <html>
 <!-- BEGIN row -->
@@ -339,6 +332,7 @@
                 </div>
             </div>
         </div>
+
     </div>
     <footer>
         <div id="footer" class="app-footer m-0">
@@ -346,6 +340,7 @@
         </div>
     </footer>
 </div>
+
 
 
 </html>
@@ -399,4 +394,6 @@
 </script>
 
 
+
 @endsection
+

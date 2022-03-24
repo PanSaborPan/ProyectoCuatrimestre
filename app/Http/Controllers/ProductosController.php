@@ -17,10 +17,12 @@ class ProductosController extends Controller
     }
 
     // Funcion para la vista de formulario de Productos
+
     public function formularioproductos()
     {
         return view('productos.FormularioProductos');
     }
+
 
     public function create(Request $request)
     {

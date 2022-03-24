@@ -152,6 +152,7 @@
     @if(Session::has('users.Usuario'))
 
     <div id="div">
+
     <div class="panel panel-inverse" data-sortable-id="form-stuff-3">
             <div class="panel-heading">
                 <h5 class="panel-title">Crear Producto</h5>
@@ -173,6 +174,7 @@
             
             <br>
 
+
             <label class="form-label">Nombre del producto</label>
             <input class="form-control" id="Nombre_del_producto" type="text" placeholder="Nombre del producto" required />
             <label class="form-label">Descriptcion del producto</label>
@@ -191,20 +193,25 @@
             <input type="number" id="Punto_de_reabastecimiento" class="form-control" placeholder="Puntos de reabastecimiento" required />
             <label class="form-label">Cuenta de activo de inventario</label>
             <input type="number" id="Cuenta_de_activo_de_inventario" class="form-control" placeholder="Cuenta de activo de inventario" required />
+
             </div>
             </div>
 </div>
             <br>
             <button id="subir" type="submit" class="btn btn-primary">Crear nuevo Producto</button>
+
             <button onclick="volverproductos()" id="volver" class="btn btn-danger">volver</button>
 
         </form>
 
+
         </div>
             </div>
 
+
         <br>
         <br>
+
 
 
 
@@ -218,12 +225,12 @@
 
     </div>
 
+
     @else
     <script>
         window.location = "{{ route('home') }}";
         alert('no has iniciado session');
     </script>
     @endif
-
 
 </body>

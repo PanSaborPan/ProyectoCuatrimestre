@@ -107,6 +107,7 @@
 @show
 
 <body>
+
 <div id="div">
     <div class="panel panel-inverse" data-sortable-id="form-stuff-3">
             <div class="panel-heading">
@@ -132,6 +133,7 @@
             <div class="col-md-5">
             <div class="mb-7px">
                 <br>
+
             <label class="form-label">Nombre</label>
             <input class="form-control" id="nombre" type="text" placeholder="Nombre" required />
             <label class="form-label">Area</label>
@@ -140,6 +142,7 @@
             <input type="text" id="usuario" class="form-control mb-5px" placeholder="Usuario" required />
             <label class="form-label">Contraseña</label>
             <input type="password" id="password" class="form-control" placeholder="Contraseña" required />
+
             </div>
             </div>
 </div>
@@ -166,5 +169,6 @@
 
 </div>
     </div>
+
 
 </body>

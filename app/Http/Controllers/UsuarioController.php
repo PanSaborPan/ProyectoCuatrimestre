@@ -15,11 +15,13 @@ class UsuarioController extends Controller
 
         return view('usuario.usuarios', compact('usuarios'));
     }
+
     // Funcion para la vista de formulario de Usuarios
     public function formulariousuario()
     {
         return view('usuario.FormularioUsuarios');
     }
+
     public function forumlario()
     {
         return view('usuario.usuarios', compact('usuarios'));
@@ -38,8 +40,35 @@ class UsuarioController extends Controller
     }
 
 
+    public function Setin()
+    {
+        return view('usuario.Setin');
+    }
+        
+    public function edit2($id)
+    {
+        $Usuarios = DB::table('usuarios')
+            ->where('Id_usuario', $id)
+            ->get();
 
+        return view('usuario.setin', compact('Usuarios'));
+    }
+    public function update2(Request $request, Usuario $usuarios)
+    {
 
+        $usuarios->Nombre = $request->Nombre;
+        $usuarios->Area = $request->Area;
+        $usuarios->Usuario = $request->Usuario;
+        $usuarios->Contraseña = $request->Contraseña;
+        $usuarios->Id_usuario = $request->Id_usuario;
+
+        $data = array(
+            'Nombre' => $usuarios->Nombre, 'Area' => $usuarios->Area, 'Usuario' => $usuarios->Usuario,
+            'Contraseña' => $usuarios->Contraseña
+        );
+
+        Usuario::updateData($usuarios->Id_usuario, $data);
+    }
 
     public function edit($id)
     {
@@ -47,7 +76,7 @@ class UsuarioController extends Controller
             ->where('Id_usuario', $id)
             ->get();
 
-        return view('usuario.ModificarUsuarios', compact('Usuarios'));
+        return view('usuario.setin', compact('Usuarios'));
     }
 
     public function update(Request $request, Usuario $usuarios)
