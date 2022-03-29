@@ -14,7 +14,7 @@
 
 
 <body>
-    <h1>Probando</h1>
+
     <table id="data-table-default2" class="table  table-bordered table-hover align-middle">
         <thead>
             <tr>
