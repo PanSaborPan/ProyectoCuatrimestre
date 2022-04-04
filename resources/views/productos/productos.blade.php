@@ -49,10 +49,24 @@
 <script type="text/javascript">
     $('#data-table-default').DataTable({
         responsive: true,
+        colReorder: true,
         dom: '<"row"<"col-sm-5"B><"col-sm-7"fr>>t<"row"<"col-sm-5"i><"col-sm-7"p>>',
         buttons: [{
             extend: 'excel',
-            title: 'productos escasos',
+            title: 'productos bajos de stock',
+            className: 'btn-sm',
+            exportOptions: {
+                columns: [0, 1, 2, 5, 6, 7, 8, 9],
+                rows: function(idx, data, node) {
+                    if (data[7] <= 100) {
+                        return data;
+                    }
+                }
+            }
+        },
+        {
+            extend: 'pdf',
+            title: 'productos bajos de stock',
             className: 'btn-sm',
             exportOptions: {
                 columns: [0, 1, 2, 5, 6, 7, 8, 9],
@@ -103,6 +117,7 @@
     $('#from1').on('submit', function(e) {
         e.preventDefault();
 
+        let id = $('#id').val();
         let Nombre_del_producto = $('#Nombre_del_producto').val();
         let Descripcion_del_producto = $('#Descripcion_del_producto').val();
         let Clave_del_sat = $('#Clave_del_sat').val();
@@ -118,6 +133,7 @@
             type: "POST",
             data: {
                 "_token": "{{ csrf_token() }}",
+                id: id,
                 Nombre_del_producto: Nombre_del_producto,
                 Descripcion_del_producto: Descripcion_del_producto,
                 Clave_del_sat: Clave_del_sat,
@@ -159,14 +175,19 @@
                 <div class="panel-heading-btn">
 
                     <a onclick="showformP()" class="btn btn-primary btn-icon btn-circle btn-lg">+</a>
-
+                    
                 </div>
 
             </div>
-
+           
             <div class="panel-body">
                 <div class="table-responsive">
+                <div class="mb-3px">
+			<span class="badge bg-red">Producto sin existencia</span>							
+			<span class="badge bg-yellow text-black">Producto bajo en existencia</span>
+			</div>
                     <table id="data-table-default" class="table table-bordered align-middle">
+                    
                         <thead>
                             <tr>
                                 <th width="1%">id</th>
@@ -186,8 +207,29 @@
 
 
                             @foreach($productos as $item)
-                            @if($item->Existencias_actuales
-                            <= 100) <tr class="fradeX odd">
+                            @if($item->Existencias_actuales === 0 ) 
+                                </tr>
+                                <tr class="fradeX odd">
+                                <td style="display: none; background-color:red">{{$item->id}}</td>
+                                <td style="display: none; background-color:red">{{$item->Nombre_del_producto}}</td>
+                                <td style="display: none; background-color:red">{{$item->Descripcion_del_producto}}</td>
+                                <td style="display: none; background-color:red">{{$item->Clave_del_sat}}</td>
+                                <td style="display: none; background-color:red">{{$item->Clave_de_unidad}}</td>
+                                <td style="display: none; background-color:red">{{$item->Tipo}}</td>
+                                <td style="display: none; background-color:red">{{$item->Precio_unitario}}</td>
+                                <td id='cantidad' style="display: none; background-color:red">{{$item->Existencias_actuales}}</td>
+                                <td style="display: none; background-color:red">{{$item->Punto_de_reabastecimiento}}</td>
+                                <td style="display: none; background-color:red">{{$item->Cuenta_de_activo_de_inventario}}</td>
+
+                                <td style="display: none; background-color:red">
+                                <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->id}}"><i class="fas fa-pen"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickdelete(this,'{{$item->Existencias_actuales}}')" value="{{$item->id}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    </td>
+                                            
+                                </tr>
+                             
+                                @elseif($item->Existencias_actuales <= 100)
+                                <tr class="fradeX odd">
 
                                 <td style="display: none; background-color:yellow">{{$item->id}}</td>
 
@@ -209,38 +251,40 @@
 
                                 </td>
 
-                                </tr>
-                                @else
-                                <tr class="fradeX odd">
+                                @else<tr class="fradeX odd">
 
-                                    <td style="display: none;">{{$item->id}}</td>
+<td style="display: none;">{{$item->id}}</td>
 
-                                    <td style="display: none;">{{$item->Nombre_del_producto}}</td>
-                                    <td style="display: none;">{{$item->Descripcion_del_producto}}</td>
-                                    <td style="display: none;">{{$item->Clave_del_sat}}</td>
-                                    <td style="display: none;">{{$item->Clave_de_unidad}}</td>
-                                    <td style="display: none;">{{$item->Tipo}}</td>
-                                    <td style="display: none;">{{$item->Precio_unitario}}</td>
-                                    <td id='cantidad' style="display: none;">{{$item->Existencias_actuales}}</td>
-                                    <td style="display: none;">{{$item->Punto_de_reabastecimiento}}</td>
-                                    <td style="display: none;">{{$item->Cuenta_de_activo_de_inventario}}</td>
-                                    <td style="display: none;">
+<td style="display: none;">{{$item->Nombre_del_producto}}</td>
+<td style="display: none;">{{$item->Descripcion_del_producto}}</td>
+<td style="display: none;">{{$item->Clave_del_sat}}</td>
+<td style="display: none;">{{$item->Clave_de_unidad}}</td>
+<td style="display: none;">{{$item->Tipo}}</td>
+<td style="display: none;">{{$item->Precio_unitario}}</td>
+<td id='cantidad' style="display: none;">{{$item->Existencias_actuales}}</td>
+<td style="display: none;">{{$item->Punto_de_reabastecimiento}}</td>
+<td style="display: none;">{{$item->Cuenta_de_activo_de_inventario}}</td>
+<td style="display: none;">
 
 
 
 
 
-                                        <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->id}}"><i class="fas fa-pen"></i></button>
-                                        <button class="id" id='Modificar' onclick="clickdelete(this,'{{$item->Existencias_actuales}}')" value="{{$item->id}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
+    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->id}}"><i class="fas fa-pen"></i></button>
+    <button class="id" id='Modificar' onclick="clickdelete(this,'{{$item->Existencias_actuales}}')" value="{{$item->id}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
 
 
-                                    </td>
+</td>
 
-                                </tr>
+</tr>
 
-                                @endif
+                            @endif
+                           
+                                 
+                            
                                 @endforeach
                     </table>
+                    
                 </div>
             </div>
         </div>
