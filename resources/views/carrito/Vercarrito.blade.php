@@ -26,87 +26,104 @@
 
     </div>
     <div id="panel" class="panel-body">
-        <div class="table-responsive">
-            <table id="data-table-default2" class="table  table-bordered table-hover align-middle">
-                <thead>
-                    <tr>
-
-                        <th width="1%" data-orderable="false">id</th>
-                        <th width="1%" data-orderable="false">Nombre</th>
-                        <th width="1%" data-orderable="false">Precio c/u</th>
-                        <th width="1%" data-orderable="false">Cantidad</th>
-                        <th width="1%" data-orderable="false">Total</th>
-                        <th width="1%" data-orderable="false">Acciones</th>
-                    </tr>
-                </thead>
-
-
-                <tbody>
-                    @foreach(Cart::getContent() as $var)
-                    <tr>
-
-                        <td>{{$var->id}}</td>
-                        <td>{{$var->name}}</td>
-                        <td>{{$var->price}}</td>
-                        <td>{{$var->quantity}}</td>
-                        <?php
-                        $algo = $var->quantity * $var->price;
-                        echo $algo;
-                        echo "<td>" . $algo . "</td>";
-                        ?>
-                        <td>
-                            <form id="borrar" action="{{route('cart.removeitem')}}" method="POST">
-                                @csrf
-                                <input type="hidden" name="id" value="{{$var->id}}">
-                                <button type="submit">Borrar</button>
-                            </form>
-
-
-
-                        </td>
-                    </tr>
-
-                    @endforeach
-
-
-                </tbody>
-
-            </table>
-            <div style="position:relative; right: -84%;" class="panel-body">
-                Subtotal:
-                <input id="Subtotal" name="Subtotal" value="{{Cart::getSubTotal()}}" readonly>
-
-            </div>
-            <div style="position:relative; right: -86%;" class="panel-body">
-                Iva:
-                <?php
-                $algo = Cart::getSubTotal() * 0.16;
-                echo "<input id='Iva' type='Text' name='Iva' value=" . $algo . " readonly>";
-                ?>
-
-            </div>
-            <div style="position:relative; right: -85.5%;" class="panel-body">
-                Total
-                <?php
-                $Iva = Cart::getSubTotal() * 0.16;
-                $Total = Cart::getSubTotal() + $Iva;
-                echo "<input id='Total' type='Text' name='Total' value=" . $Total . " readonly>";
-                ?>
-            </div>
-
-
-
-
-
-
-
-        </div>
-        <br>
-        <a href='{{route("show")}}' class="btn btn-primary">Volver</a>
-        <br>
-        <br>
-        <form id="borrar" action="{{route('descarga_pdf')}}" method="get">
+        <form id="borrar" action="{{route('descarga_pdf')}}" method="POST">
             @csrf
+            <div class="row mb-2">
+
+                <div class="col-md-3">
+                    <div class="mb-4px">
+                        <label>Cliente</label>
+                        <select class="form-select" name="ClientesList">
+
+                            @foreach($clientes as $info)
+                            <option name="ClientesList" value="{{$info->Id_cliente}}">{{$info->Nombre_de_contacto}}</option>
+                            @endforeach
+                        </select>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table id="data-table-default2" class="table  table-bordered table-hover align-middle">
+                    <thead>
+                        <tr>
+
+                            <th width="1%" data-orderable="false">id</th>
+                            <th width="1%" data-orderable="false">Nombre</th>
+                            <th width="1%" data-orderable="false">Precio c/u</th>
+                            <th width="1%" data-orderable="false">Cantidad</th>
+                            <th width="1%" data-orderable="false">Total</th>
+                            <th width="1%" data-orderable="false">Acciones</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+                        @foreach(Cart::getContent() as $var)
+                        <tr>
+
+                            <td>{{$var->id}}</td>
+                            <td>{{$var->name}}</td>
+                            <td>{{$var->price}}</td>
+                            <td>{{$var->quantity}}</td>
+                            <?php
+                            $algo = $var->quantity * $var->price;
+
+                            echo "<td>" . $algo . "</td>";
+                            ?>
+                            <td>
+                                <form id="borrar" action="{{route('cart.removeitem')}}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{$var->id}}">
+                                    <button type="submit">Borrar</button>
+                                </form>
+
+
+
+                            </td>
+                        </tr>
+
+                        @endforeach
+
+
+                    </tbody>
+
+                </table>
+                <div style="position:relative; right: -84%;" class="panel-body">
+                    Subtotal:
+                    <input id="Subtotal" name="Subtotal" value="{{Cart::getSubTotal()}}" readonly>
+
+                </div>
+                <div style="position:relative; right: -86%;" class="panel-body">
+                    Iva:
+                    <?php
+                    $algo = Cart::getSubTotal() * 0.16;
+                    echo "<input id='Iva' type='Text' name='Iva' value=" . $algo . " readonly>";
+                    ?>
+
+                </div>
+                <div style="position:relative; right: -85.5%;" class="panel-body">
+                    Total
+                    <?php
+                    $Iva = Cart::getSubTotal() * 0.16;
+                    $Total = Cart::getSubTotal() + $Iva;
+                    echo "<input id='Total' type='Text' name='Total' value=" . $Total . " readonly>";
+                    ?>
+                </div>
+
+
+
+
+
+
+
+            </div>
+            <br>
+            <a href='{{route("show")}}' class="btn btn-primary">Volver</a>
+            <br>
+            <br>
+
             <button type="submit" class="btn btn-danger">PDF</button>
         </form>
     </div>
@@ -156,10 +173,14 @@
 
 <script>
     function Iva(z) {
-        document.getElementById('Iva').value = z * 0.16;
+        document.getElementsByClassName('ClientesList').value = z * 0.16;
 
     }
 </script>
+
+
+
+
 
 
 <script>

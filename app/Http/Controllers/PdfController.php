@@ -5,19 +5,30 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use PhpParser\Node\Expr\FuncCall;
+use Illuminate\Support\Facades\DB;
 
 class PdfController extends Controller
 {
-    public function PDF()
+    public function PDF(Request $request)
     {
-        $pdf = PDF::loadview('prueba');
+        $clientes = DB::table('clientes')
+            ->where('Id_cliente', $request->ClientesList)
+            ->get();
+
+        $pdf = PDF::loadview('prueba', compact('clientes'));
+
         return $pdf->stream('prueba.pdf');
     }
 
-    public function PDFcarrito()
+    public function PDFcarrito(Request $request)
     {
+        $clientes = DB::table('clientes')
+            ->where('Id_cliente', $request->ClientesList)
+            ->get();
 
-        $pdf = PDF::loadview('prueba');
+        $pdf = PDF::loadview('prueba', compact('clientes'));
+
+
         return $pdf->stream('prueba.pdf');
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\productos;
 use Cart;
+use App\Models\clientes;
 
 class CartController extends Controller
 {
@@ -12,6 +13,7 @@ class CartController extends Controller
     public function index()
     {
         $productos = productos::all();
+
 
         return view('carrito.carrito', compact('productos'));
     }
@@ -47,6 +49,9 @@ class CartController extends Controller
 
     public function Mostrarcarrito()
     {
-        return view('carrito.Vercarrito');
+        $clientes = clientes::all();
+
+
+        return view('carrito.Vercarrito', ['clientes' => $clientes]);
     }
 }

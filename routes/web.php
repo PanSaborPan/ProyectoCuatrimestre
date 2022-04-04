@@ -93,7 +93,7 @@ Route::get('/Productos/FormularioProductos', [ProductosController::class, 'formu
 
 
 //MODULO DE CARRITO
-Route::get('/pdf', [PdfController::class, 'PDF'])->name('descarga_pdf');
+Route::post('/pdf', [PdfController::class, 'PDF'])->name('descarga_pdf');
 Route::get('/cart-show', [CartController::class, 'Index'])->name('show');
 Route::post('/cart-add', [CartController::class, 'Add'])->name('cart.add');
 Route::get('/Carrito', [CartController::class, 'Mostrarcarrito'])->name('carro');

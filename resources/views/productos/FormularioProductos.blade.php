@@ -153,84 +153,84 @@
 
     <div id="div">
 
-    <div class="panel panel-inverse" data-sortable-id="form-stuff-3">
+        <div class="panel panel-inverse" data-sortable-id="form-stuff-3">
             <div class="panel-heading">
                 <h5 class="panel-title">Crear Producto</h5>
 
-                
 
-                
+
+
 
             </div>
             <div class="panel-body">
                 <div class="table-responsive">
-                
-                <form id="from1">
-            @csrf
-            <div class="row mb-3">
-            
-            <div class="col-md-5">
-            <div class="mb-7px">
-            
+
+                    <form id="from1">
+                        @csrf
+                        <div class="row mb-3">
+
+                            <div class="col-md-5">
+                                <div class="mb-7px">
+
+                                    <br>
+
+
+                                    <label class="form-label">Nombre del producto</label>
+                                    <input class="form-control" id="Nombre_del_producto" type="text" placeholder="Nombre del producto" required />
+                                    <label class="form-label">Descriptcion del producto</label>
+                                    <textarea class="form-control" id="Descripcion_del_producto" placeholder="Descrpcion del producto" required></textarea>
+                                    <label class="form-label">Clave del sat</label>
+                                    <input type="number" id="Clave_del_sat" class="form-control mb-5px" placeholder="Clave SAT" required />
+                                    <label class="form-label">Clave de unidad</label>
+                                    <input type="text" id="Clave_de_unidad" class="form-control" placeholder="Clave de unidad" required />
+                                    <label class="form-label">Tipo</label>
+                                    <input type="text" id="Tipo" class="form-control" placeholder="Tipo" required />
+                                    <label class="form-label">Precio unitario</label>
+                                    <input type="number" id="Precio_unitario" class="form-control" placeholder="Precio por unidad" required />
+                                    <label class="form-label">Existencias actuales</label>
+                                    <input type="number" id="Existencias_actuales" class="form-control" placeholder="Existencias" required />
+                                    <label class="form-label">Puntos de reabastecimiento</label>
+                                    <input type="number" id="Punto_de_reabastecimiento" class="form-control" placeholder="Puntos de reabastecimiento" required />
+                                    <label class="form-label">Cuenta de activo de inventario</label>
+                                    <input type="number" id="Cuenta_de_activo_de_inventario" class="form-control" placeholder="Cuenta de activo de inventario" required />
+
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <button id="subir" type="submit" class="btn btn-primary">Crear nuevo Producto</button>
+
+                        <button onclick="volverproductos()" id="volver" class="btn btn-danger">volver</button>
+
+                    </form>
+
+
+                </div>
+            </div>
+
+
+            <br>
             <br>
 
 
-            <label class="form-label">Nombre del producto</label>
-            <input class="form-control" id="Nombre_del_producto" type="text" placeholder="Nombre del producto" required />
-            <label class="form-label">Descriptcion del producto</label>
-            <textarea class="form-control" id="Descripcion_del_producto" placeholder="Descrpcion del producto" required></textarea>
-            <label class="form-label">Clave del sat</label>
-            <input type="number" id="Clave_del_sat" class="form-control mb-5px" placeholder="Clave SAT" required />
-            <label class="form-label">Clave de unidad</label>
-            <input type="text" id="Clave_de_unidad" class="form-control" placeholder="Clave de unidad" required />
-            <label class="form-label">Tipo</label>
-            <input type="text" id="Tipo" class="form-control" placeholder="Tipo" required />
-            <label class="form-label">Precio unitario</label>
-            <input type="number" id="Precio_unitario" class="form-control" placeholder="Precio por unidad" required />
-            <label class="form-label">Existencias actuales</label>
-            <input type="number" id="Existencias_actuales" class="form-control" placeholder="Existencias" required />
-            <label class="form-label">Puntos de reabastecimiento</label>
-            <input type="number" id="Punto_de_reabastecimiento" class="form-control" placeholder="Puntos de reabastecimiento" required />
-            <label class="form-label">Cuenta de activo de inventario</label>
-            <input type="number" id="Cuenta_de_activo_de_inventario" class="form-control" placeholder="Cuenta de activo de inventario" required />
 
-            </div>
-            </div>
-</div>
-            <br>
-            <button id="subir" type="submit" class="btn btn-primary">Crear nuevo Producto</button>
 
-            <button onclick="volverproductos()" id="volver" class="btn btn-danger">volver</button>
 
-        </form>
 
+            <footer>
+                <div id="footer" class="app-footer m-0">
+                    &copy; 2021 TNS Custom Bussiness All Right Reserved
+                </div>
+            </footer>
 
         </div>
-            </div>
 
 
-        <br>
-        <br>
-
-
-
-
-
-
-        <footer>
-            <div id="footer" class="app-footer m-0">
-                &copy; 2021 TNS Custom Bussiness All Right Reserved
-            </div>
-        </footer>
-
-    </div>
-
-
-    @else
-    <script>
-        window.location = "{{ route('home') }}";
-        alert('no has iniciado session');
-    </script>
-    @endif
+        @else
+        <script>
+            window.location = "{{ route('home') }}";
+            alert('no has iniciado session');
+        </script>
+        @endif
 
 </body>
