@@ -33,6 +33,10 @@
             </div>
             <div class="panel-body">
                 <div class="table-responsive">
+                <div class="mb-3px">
+			<span class="badge bg-red">Producto sin existencia</span>							
+			<span class="badge bg-yellow text-black">Producto bajo en existencia</span>
+			</div>
                     <table id="data-table-default5" class="table table-bordered mb-0 align-middle">
                         <thead>
                             <tr>
@@ -53,9 +57,29 @@
 
 
                             @foreach($productos as $item)
-                            @if($item->Existencias_actuales
-                            <= 100) <tr class="fradeX odd">
-                                <td style="display: none; background-color:yellow">{{$item->SKU}}</td>
+                            @if($item->Existencias_actuales === 0 ) 
+                                </tr>
+                                <tr class="fradeX odd">
+                                <td style="display: none; background-color:red">{{$item->id}}</td>
+                                <td style="display: none; background-color:red">{{$item->Nombre_del_producto}}</td>
+                                <td style="display: none; background-color:red">{{$item->Descripcion_del_producto}}</td>
+                                <td style="display: none; background-color:red">{{$item->Clave_del_sat}}</td>
+                                <td style="display: none; background-color:red">{{$item->Clave_de_unidad}}</td>
+                                <td style="display: none; background-color:red">{{$item->Tipo}}</td>
+                                <td style="display: none; background-color:red">{{$item->Precio_unitario}}</td>
+                                <td id='cantidad' style="display: none; background-color:red">{{$item->Existencias_actuales}}</td>
+                                <td style="display: none; background-color:red">{{$item->Punto_de_reabastecimiento}}</td>
+                                <td style="display: none; background-color:red">{{$item->Cuenta_de_activo_de_inventario}}</td>
+
+                               
+                                            
+                                </tr>
+                             
+                                @elseif($item->Existencias_actuales <= 100)
+                                <tr class="fradeX odd">
+
+                                <td style="display: none; background-color:yellow">{{$item->id}}</td>
+
                                 <td style="display: none; background-color:yellow">{{$item->Nombre_del_producto}}</td>
                                 <td style="display: none; background-color:yellow">{{$item->Descripcion_del_producto}}</td>
                                 <td style="display: none; background-color:yellow">{{$item->Clave_del_sat}}</td>
@@ -65,26 +89,26 @@
                                 <td id='cantidad' style="display: none; background-color:yellow">{{$item->Existencias_actuales}}</td>
                                 <td style="display: none; background-color:yellow">{{$item->Punto_de_reabastecimiento}}</td>
                                 <td style="display: none; background-color:yellow">{{$item->Cuenta_de_activo_de_inventario}}</td>
-
-
+                                
                                 </tr>
-                                @else
-                                <tr class="fradeX odd">
-                                    <td style="display: none;">{{$item->SKU}}</td>
-                                    <td style="display: none;">{{$item->Nombre_del_producto}}</td>
-                                    <td style="display: none;">{{$item->Descripcion_del_producto}}</td>
-                                    <td style="display: none;">{{$item->Clave_del_sat}}</td>
-                                    <td style="display: none;">{{$item->Clave_de_unidad}}</td>
-                                    <td style="display: none;">{{$item->Tipo}}</td>
-                                    <td style="display: none;">{{$item->Precio_unitario}}</td>
-                                    <td id='cantidad' style="display: none;">{{$item->Existencias_actuales}}</td>
-                                    <td style="display: none;">{{$item->Punto_de_reabastecimiento}}</td>
-                                    <td style="display: none;">{{$item->Cuenta_de_activo_de_inventario}}</td>
+                                @else<tr class="fradeX odd">
+
+<td style="display: none;">{{$item->id}}</td>
+
+<td style="display: none;">{{$item->Nombre_del_producto}}</td>
+<td style="display: none;">{{$item->Descripcion_del_producto}}</td>
+<td style="display: none;">{{$item->Clave_del_sat}}</td>
+<td style="display: none;">{{$item->Clave_de_unidad}}</td>
+<td style="display: none;">{{$item->Tipo}}</td>
+<td style="display: none;">{{$item->Precio_unitario}}</td>
+<td id='cantidad' style="display: none;">{{$item->Existencias_actuales}}</td>
+<td style="display: none;">{{$item->Punto_de_reabastecimiento}}</td>
+<td style="display: none;">{{$item->Cuenta_de_activo_de_inventario}}</td>
 
 
-                                </tr>
+</tr>
 
-                                @endif
+                            @endif
                                 @endforeach
                     </table>
                     <div id="interactive-chart" class="h-10px">
@@ -156,8 +180,8 @@
 
 
 
-                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}">Modificar</button>
-                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}">Borrar</button>
+                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
+                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
 
                                 </td>
 
