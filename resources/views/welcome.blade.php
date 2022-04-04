@@ -24,19 +24,20 @@
         <!-- BEGIN panel -->
         <div class="panel panel-inverse" data-sortable-id="index-1">
             <div class="panel-heading">
-                <h4 class="panel-title">tabla de productos</h4>
+                <h4 class="panel-title">Tabla de productos</h4>
                 <div class="panel-heading-btn">
 
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                    <!--<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>-->
+                    <!--<a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>-->
                 </div>
             </div>
             <div class="panel-body">
                 <div class="table-responsive">
-                <div class="mb-3px">
-			<span class="badge bg-red">Producto sin existencia</span>							
-			<span class="badge bg-yellow text-black">Producto bajo en existencia</span>
-			</div>
+                    <div class="mb-3px">
+                        <span class="badge bg-red" style="font-size: 18px;">Producto sin existencia</span>
+                        <span class="badge bg-yellow text-black" style="font-size: 18px;">Producto bajo en existencia</span>
+                    </div>
+                    <br>
                     <table id="data-table-default5" class="table table-bordered mb-0 align-middle">
                         <thead>
                             <tr>
@@ -57,9 +58,9 @@
 
 
                             @foreach($productos as $item)
-                            @if($item->Existencias_actuales === 0 ) 
-                                </tr>
-                                <tr class="fradeX odd">
+                            @if($item->Existencias_actuales === 0 )
+                            </tr>
+                            <tr class="fradeX odd">
                                 <td style="display: none; background-color:red">{{$item->id}}</td>
                                 <td style="display: none; background-color:red">{{$item->Nombre_del_producto}}</td>
                                 <td style="display: none; background-color:red">{{$item->Descripcion_del_producto}}</td>
@@ -71,12 +72,11 @@
                                 <td style="display: none; background-color:red">{{$item->Punto_de_reabastecimiento}}</td>
                                 <td style="display: none; background-color:red">{{$item->Cuenta_de_activo_de_inventario}}</td>
 
-                               
-                                            
-                                </tr>
-                             
-                                @elseif($item->Existencias_actuales <= 100)
-                                <tr class="fradeX odd">
+
+
+                            </tr>
+
+                            @elseif($item->Existencias_actuales <= 100) <tr class="fradeX odd">
 
                                 <td style="display: none; background-color:yellow">{{$item->id}}</td>
 
@@ -89,26 +89,26 @@
                                 <td id='cantidad' style="display: none; background-color:yellow">{{$item->Existencias_actuales}}</td>
                                 <td style="display: none; background-color:yellow">{{$item->Punto_de_reabastecimiento}}</td>
                                 <td style="display: none; background-color:yellow">{{$item->Cuenta_de_activo_de_inventario}}</td>
-                                
+
                                 </tr>
                                 @else<tr class="fradeX odd">
 
-<td style="display: none;">{{$item->id}}</td>
+                                    <td style="display: none;">{{$item->id}}</td>
 
-<td style="display: none;">{{$item->Nombre_del_producto}}</td>
-<td style="display: none;">{{$item->Descripcion_del_producto}}</td>
-<td style="display: none;">{{$item->Clave_del_sat}}</td>
-<td style="display: none;">{{$item->Clave_de_unidad}}</td>
-<td style="display: none;">{{$item->Tipo}}</td>
-<td style="display: none;">{{$item->Precio_unitario}}</td>
-<td id='cantidad' style="display: none;">{{$item->Existencias_actuales}}</td>
-<td style="display: none;">{{$item->Punto_de_reabastecimiento}}</td>
-<td style="display: none;">{{$item->Cuenta_de_activo_de_inventario}}</td>
+                                    <td style="display: none;">{{$item->Nombre_del_producto}}</td>
+                                    <td style="display: none;">{{$item->Descripcion_del_producto}}</td>
+                                    <td style="display: none;">{{$item->Clave_del_sat}}</td>
+                                    <td style="display: none;">{{$item->Clave_de_unidad}}</td>
+                                    <td style="display: none;">{{$item->Tipo}}</td>
+                                    <td style="display: none;">{{$item->Precio_unitario}}</td>
+                                    <td id='cantidad' style="display: none;">{{$item->Existencias_actuales}}</td>
+                                    <td style="display: none;">{{$item->Punto_de_reabastecimiento}}</td>
+                                    <td style="display: none;">{{$item->Cuenta_de_activo_de_inventario}}</td>
 
 
-</tr>
+                                </tr>
 
-                            @endif
+                                @endif
                                 @endforeach
                     </table>
                     <div id="interactive-chart" class="h-10px">
@@ -124,11 +124,11 @@
         <!-- BEGIN pane2 -->
         <div class="panel panel-inverse" data-sortable-id="index-2">
             <div class="panel-heading">
-                <h4 class="panel-title">tabla de cliente</h4>
+                <h4 class="panel-title">Tabla de cliente</h4>
                 <div class="panel-heading-btn">
 
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                    <!--<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>-->
+                    <!--<a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>-->
                 </div>
             </div>
             <div class="panel-body">
@@ -137,22 +137,22 @@
                     <table id="data-table-default2" class="table table-striped  table-bordered mb-0 align-middle">
                         <thead>
                             <tr>
-                                <th width="1%">id</th>
+                                <th width="1%">Id</th>
                                 <th width="1%">Nombre</th>
                                 <th width="1%">Empresa</th>
                                 <th width="1%">Razon social</th>
                                 <th width="1%">RFC</th>
                                 <th width="1%">Telefono</th>
-                                <th width="1%">Movil</th>
-                                <th width="1%">Correo electronico 1</th>
-                                <th width="1%">Correo electronico 2</th>
+                                <th width="1%">Móvil</th>
+                                <th width="1%">Correo electrónico 1</th>
+                                <th width="1%">Correo electrónico 2</th>
                                 <th width="1%">Calle</th>
-                                <th width="1%">Numero</th>
-                                <th width="1%">Codigo postal</th>
+                                <th width="1%">Número</th>
+                                <th width="1%">Código postal</th>
                                 <th width="1%">Ciudad</th>
                                 <th width="1%">Estado</th>
-                                <th width="1%">Pais</th>
-                                <th width="1%">Acciones</th>
+                                <th width="1%">País</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -176,15 +176,6 @@
                                 <td style="display: none;">{{$item->Ciudad}}</td>
                                 <td style="display: none;">{{$item->Estado}}</td>
                                 <td style="display: none;">{{$item->Pais}}</td>
-                                <td style="display: none;">
-
-
-
-                                    <button class="id" id='Modificar' onclick="clickaction(this)" value="{{$item->Id_cliente}}"><i class="fas fa-pen"></i></button>
-                                    <button class="id" id='Modificar' onclick="clickdelete(this)" value="{{$item->Id_cliente}}"><i class="fa fa-trash" aria-hidden="true"></i></button>
-
-                                </td>
-
                             </tr>
                             @endforeach
                     </table>
@@ -199,11 +190,11 @@
         <!-- BEGIN pane3 -->
         <div class="panel panel-inverse" data-sortable-id="index-1">
             <div class="panel-heading">
-                <h4 class="panel-title">tabla de proveedor</h4>
+                <h4 class="panel-title">Tabla de proveedor</h4>
                 <div class="panel-heading-btn">
 
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                    <!--<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>-->
+                    <!--<a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>-->
                 </div>
             </div>
             <div class="panel-body">
@@ -261,11 +252,11 @@
         <!-- BEGIN pane4 -->
         <div class="panel panel-inverse" data-sortable-id="index-1">
             <div class="panel-heading">
-                <h4 class="panel-title">tabla de ventas</h4>
+                <h4 class="panel-title">Tabla de ventas</h4>
                 <div class="panel-heading-btn">
 
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                    <!--<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>-->
+                    <!--<a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>-->
                 </div>
             </div>
             <div class="panel-body ">
@@ -276,12 +267,13 @@
                                 <th width="1%" data-orderable="false">Folio</th>
                                 <th width="1%" data-orderable="false">Cliente</th>
                                 <th width="1%" data-orderable="false">Producto</th>
-                                <th width="1%" data-orderable="false">Descripcion</th>
+                                <th width="1%" data-orderable="false">Descripción</th>
                                 <th width="1%" data-orderable="false">Cantidad</th>
-                                <th width="1%" data-orderable="false">Precio_Unitario</th>
+                                <th width="1%" data-orderable="false">Precio unitario</th>
                                 <th width="1%" data-orderable="false">Iva</th>
-                                <th width="1%" data-orderable="false">Sub_Total</th>
+                                <th width="1%" data-orderable="false">Sub-total</th>
                                 <th width="1%" data-orderable="false">Total</th>
+
 
                             </tr>
                         </thead>
@@ -315,10 +307,10 @@
 
         <div class="panel panel-inverse" data-sortable-id="index-1">
             <div class="panel-heading">
-                <h4 class="panel-title">tabla de Usuarios</h4>
+                <h4 class="panel-title">Tabla de Usuarios</h4>
                 <div class="panel-heading-btn">
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>
-                    <a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>
+                    <!--<a href="javascript:;" class="btn btn-xs btn-icon btn-success" data-toggle="panel-reload"><i class="fa fa-redo"></i></a>-->
+                    <!--<a href="javascript:;" class="btn btn-xs btn-icon btn-warning" data-toggle="panel-collapse"><i class="fa fa-minus"></i></a>-->
                 </div>
             </div>
             <div class="panel-body ">
@@ -420,4 +412,3 @@
 
 
 @endsection
-

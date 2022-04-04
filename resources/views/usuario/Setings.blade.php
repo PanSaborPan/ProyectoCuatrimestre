@@ -126,14 +126,14 @@
 
 
                                     <input type="hidden" value="{{Session::get('users.Id_usuario')}}" id="id" />
-                                    <label class="form-label">Nombre</label>
-                                    <input class="form-control" id="nombre" type="text" placeholder="Nombre" value="{{Session::get('users.Nombre')}}" />
-                                    <label class="form-label">Area</label>
-                                    <input class="form-control" id="area" type="text" placeholder="Area" value="{{Session::get('users.Area')}}" />
-                                    <label class="form-label">Usuario</label>
-                                    <input type="text" id="usuario" class="form-control mb-5px" placeholder="Usuario" value="{{Session::get('users.Usuario')}}" readonly />
-                                    <label class="form-label">Contraseña</label>
-                                    <input type="password" id="password" class="form-control" placeholder="Contraseña" value="{{Session::get('users.Contraseña')}}" />
+                                    <label class="form-label">Nombre:</label>
+                                    <input class="form-control" id="nombre" type="text" placeholder="Nombre" value="{{Session::get('users.Nombre')}}" /><br>
+                                    <label class="form-label">Área:</label>
+                                    <input class="form-control" id="area" type="text" placeholder="Area" value="{{Session::get('users.Area')}}" /><br>
+                                    <label class="form-label">Usuario:</label>
+                                    <input type="text" id="usuario" class="form-control mb-5px" placeholder="Usuario" value="{{Session::get('users.Usuario')}}" readonly /><br>
+                                    <label class="form-label">Contraseña:</label>
+                                    <input type="password" id="password" class="form-control" placeholder="Contraseña" value="{{Session::get('users.Contraseña')}}" /><br>
 
 
                                 </div>
@@ -145,7 +145,7 @@
 
 
                     </form>
-                    <button onclick="volver()" id="volver" class="btn btn-danger">volver</button>
+                    <button onclick="volver()" id="volver" class="btn btn-danger">Volver</button>
                 </div>
             </div>
 

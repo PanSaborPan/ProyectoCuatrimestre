@@ -154,7 +154,7 @@
                         <a href="javascript:;" class="dropdown-item">Editar Perfil</a>
                         <div class="dropdown-divider"></div>
                         -->
-                        <a href="{{ route('home') }}" class="dropdown-item">Log Out</a>
+                        <a href="{{ route('home') }}" class="dropdown-item">Cerrar sesion</a>
                     </div>
                 </div>
             </div>
@@ -169,7 +169,7 @@
 
                         <div class="menu-profile-cover with-shadow"></div>
                         <div class="menu-profile-image">
-                            <img src="{{ asset('img/login-bg/teri.jpg') }}" alt="" />
+                            <img src="{{ asset('img/login-bg/profile.jpg') }}" alt="" />
                         </div>
                         <div class="menu-profile-info">
                             <div class="d-flex align-items-center">
@@ -188,7 +188,7 @@
 
                     </div>
 
-                    <div class="menu-header">Profile Settings</div>
+                    <div class="menu-header">Ajustes del perfil</div>
                     <div id="appSidebarProfileMenu">
 
 
@@ -206,21 +206,21 @@
                                 <div class="menu-icon">
                                     <i class="fa fa-cog"></i>
                                 </div>
-                                <div class="menu-text">Settings</div>
+                                <div class="menu-text">Personalización</div>
                             </a>
 
                         </div>
 
                         <div class="menu-divider m-0"></div>
                     </div>
-                    <div class="menu-header">Navigation</div>
+                    <div class="menu-header">Navegación</div>
 
                     <div class="menu-item ">
                         <a href="{{ url('/welcome') }}" class="menu-link">
                             <div class="menu-icon">
                                 <i class="fa fa-home"></i>
                             </div>
-                            <div class="menu-text">Dashboard</div>
+                            <div class="menu-text">Inicio</div>
                         </a>
                         <div class="menu-item ">
                             <a onclick="clientes()" class="menu-link">
@@ -250,7 +250,7 @@
                             </a>
 
                         </div>
-                        <div class="menu-item ">
+                        <!-- <div class="menu-item ">
                             <a onclick="ventas()" class="menu-link">
                                 <div class="menu-icon">
                                     <i class="fa fa-shopping-bag" aria-hidden="true"></i>
@@ -259,7 +259,7 @@
                                 <div class="menu-text">Ventas</div>
                             </a>
 
-                        </div>
+                        </div>-->
                         <div class="menu-item ">
                             <a onclick="usuarios()" class="menu-link">
                                 <div class="menu-icon">
@@ -273,9 +273,9 @@
                         <div class="menu-item">
                             <a href="{{route('show')}}" class="menu-link">
                                 <div class="menu-icon">
-                                    <i class="fas fa-shopping-cart"></i>
+                                    <i class="fas fa-money-bill-alt"></i>
                                 </div>
-                                <div class="menu-text">Carrito</div>
+                                <div class="menu-text">Cotización</div>
                             </a>
 
                         </div>

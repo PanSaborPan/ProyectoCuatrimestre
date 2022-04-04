@@ -39,7 +39,7 @@
 <script type="text/javascript">
     $('#data-table-default').DataTable({
         responsive: true
-    });     
+    });
 </script>
 
 <script>
@@ -135,7 +135,7 @@
         {{-- Boton para mandar a formulario de Clientes --}}
         <div class="panel panel-inverse" data-sortable-id="table-basic-7">
             <div class="panel-heading">
-                <h3 class="panel-title">Tabla de Clientes actuales</h3>
+                <h3 class="panel-title">Tabla de clientes actuales</h3>
 
 
                 <div class="panel-heading-btn">
@@ -152,21 +152,21 @@
                     <table id="data-table-default" class="table table-striped table-bordered align-middle">
                         <thead>
                             <tr>
-                                <th width="1%">id</th>
+                                <th width="1%">Id</th>
                                 <th width="1%">Nombre</th>
                                 <th width="1%">Empresa</th>
                                 <th width="1%">Razon social</th>
                                 <th width="1%">RFC</th>
                                 <th width="1%">Telefono</th>
-                                <th width="1%">Movil</th>
-                                <th width="1%">Correo electronico 1</th>
-                                <th width="1%">Correo electronico 2</th>
+                                <th width="1%">Móvil</th>
+                                <th width="1%">Correo electrónico 1</th>
+                                <th width="1%">Correo electrónico 2</th>
                                 <th width="1%">Calle</th>
-                                <th width="1%">Numero</th>
-                                <th width="1%">Codigo postal</th>
+                                <th width="1%">Número</th>
+                                <th width="1%">Código postal</th>
                                 <th width="1%">Ciudad</th>
                                 <th width="1%">Estado</th>
-                                <th width="1%">Pais</th>
+                                <th width="1%">País</th>
                                 <th width="1%">Acciones</th>
                             </tr>
                         </thead>

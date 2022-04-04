@@ -18,18 +18,19 @@
         <div class="col-md-5">
             <div class="mb-7px">
                 @foreach($clientes as $var)
-                <p>Datos del cliente:</p>
+                <h4>Datos del cliente:</h4>
                 <p style="color: #4F4F4F;"> Nombre del cliente:<br>
                     {{$var->Nombre_de_contacto}}<br>
 
-                    Razon social:<br>
+                    Razón social:<br>
                     {{$var->Razonsocial}}<br>
 
                     RFC:<br>
                     {{$var->Rfc}}<br>
 
-                    Correo:<br>
+                    Correo electrónico:<br>
                     {{$var->Correo_electronico_1}}<br>
+
                     Fecha:<br>
                     04-04-2022
                 </p>
@@ -38,13 +39,13 @@
             </div>
             <div style="position:relative; right: -84%;" class="panel-body">
                 Subtotal:
-                {{Cart::getSubTotal()}}<br>
-                Iva:
+                $ {{Cart::getSubTotal()}}<br>
+                Iva: $
                 <?php
                 $algo = Cart::getSubTotal() * 0.16;
-                echo $algo;
+                echo  $algo;
                 ?><br>
-                Total:
+                Total: $
                 <?php
                 $Iva = Cart::getSubTotal() * 0.16;
                 $Total = Cart::getSubTotal() + $Iva;
@@ -74,12 +75,12 @@
 
                 <td style='text-align:center; border:none;'>{{$var->id}}</td>
                 <td style='text-align:center; border:none;'>{{$var->name}}</td>
-                <td style='text-align:center; border:none; '>{{$var->price}}</td>
+                <td style='text-align:center; border:none; '>${{$var->price}}</td>
                 <td style='text-align:center; border:none;'>{{$var->quantity}}</td>
                 <?php
                 $algo = $var->quantity * $var->price;
                 echo $algo;
-                echo "<td style='text-align:center; border:none;'>" . $algo . "</td>";
+                echo "<td style='text-align:center; border:none;'>$" . $algo . "</td>";
                 ?>
 
             </tr>

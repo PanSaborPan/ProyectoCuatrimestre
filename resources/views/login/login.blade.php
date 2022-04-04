@@ -83,12 +83,12 @@
                         <div class="form-floating mb-20px {{ $errors->has('email' ? 'has-error' : '') }} ">
                             <input type="text" class="form-control fs-13px h-45px border-0" placeholder="Email Address" id="emailAddress" name="Usuario" value="{{ old('email') }}" required>
                             {!! $errors->first('Usuario','<span class="help-block">:message</span>' ) !!}
-                            <label for="emailAddress" class="d-flex align-items-center text-gray-600 fs-13px">Email Address</label>
+                            <label for="emailAddress" class="d-flex align-items-center text-gray-600 fs-13px">Usuario</label>
                         </div>
                         <div class="form-floating mb-20px {{ $errors->has('email' ? 'has-error' : '') }} ">
                             <input type="password" class="form-control fs-13px h-45px border-0" placeholder="Password" name="Contraseña" required>
                             {!! $errors->first('Contraseña','<span class="helpblock">:message</span>' ) !!}
-                            <label for="emailAddress" class="d-flex align-items-center text-gray-600 fs-13px">Password</label>
+                            <label for="emailAddress" class="d-flex align-items-center text-gray-600 fs-13px">Contraseña</label>
                         </div>
                         <!-- <div class="form-check mb-20px">
                             <input class="form-check-input border-0" type="checkbox" value="1" id="rememberMe">
@@ -97,7 +97,7 @@
                             </label>
                         </div>-->
                         <div class="mb-20px">
-                            <button type="submit" class="btn btn-success d-block w-100 h-45px btn-lg">Sign me in</button>
+                            <button type="submit" class="btn btn-success d-block w-100 h-45px btn-lg">Iniciar sesión</button>
                         </div>
                         <!--<div class="text-gray-500">
                             Not a member yet? Click <a href="javascript:;" class="text-white">here</a> to register.

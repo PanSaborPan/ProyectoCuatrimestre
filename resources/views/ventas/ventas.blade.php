@@ -137,11 +137,11 @@
                                 <th width="1%" data-orderable="false">Folio</th>
                                 <th width="1%" data-orderable="false">Cliente</th>
                                 <th width="1%" data-orderable="false">Producto</th>
-                                <th width="1%" data-orderable="false">Descripcion</th>
+                                <th width="1%" data-orderable="false">Descripción</th>
                                 <th width="1%" data-orderable="false">Cantidad</th>
-                                <th width="1%" data-orderable="false">Precio_Unitario</th>
+                                <th width="1%" data-orderable="false">Precio unitario</th>
                                 <th width="1%" data-orderable="false">Iva</th>
-                                <th width="1%" data-orderable="false">Sub_Total</th>
+                                <th width="1%" data-orderable="false">Sub-total</th>
                                 <th width="1%" data-orderable="false">Total</th>
                                 <th width="1%" data-orderable="false">Acciones</th>
                             </tr>

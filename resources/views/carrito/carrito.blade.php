@@ -28,21 +28,21 @@
     <div class="form-group">
         @if(count(Cart::getContent()))
         <div class="note note-primary note-with-end-icon">
-            <div class="note-icon"><i class="fas fa-shopping-cart"></i></div>
+            <div class="note-icon"><i class="fas fa-money-bill-alt"></i></div>
 
             <div class="note-content">
 
-                <h4><b>Carrito de compras con nuevos objetos <span class="badge bg-danger"> {{count(Cart::getContent())}}</span></b></h4>
-                <p><b>Hay objetos en el carrito</b></p>
-                <a href='{{route("carro")}}' class="btn btn-dark">Ver carrito</a>
+                <h4><b>Cotización</b></h4>
+                <p><b>Productos agregados: <span class="badge bg-danger"> {{count(Cart::getContent())}}</span></p>
+                <a href='{{route("carro")}}' class="btn btn-dark">Ver nota de salida</a>
             </div>
         </div>
         @else
         <div class="note note-secondary note-with-end-icon">
-            <div class="note-icon"><i class="fas fa-shopping-cart"></i></div>
+            <div class="note-icon"><i class="fas fa-money-bill-alt"></i></div>
             <div class="note-content">
-                <h4><b class="text-white">Carrito de compras con nuevos objetos</b></h4>
-                <b class="text-white">Hay objetos en el carrito</b>
+                <h4><b class="text-white">Cotización</b></h4>
+                <b class="text-white">Sin productos actualmente</b>
             </div>
         </div>
 
@@ -54,8 +54,9 @@
 
 
                 @foreach($productos as $item)
-
+                @if($item->Existencias_actuales == 0)
                 <div class="col-3  p-4 mt-4 text-center">
+                    <h1 style="background-color: red;">Actualmente sin existencias</h1>
                     <form id="Añadir" action="{{route('cart.add')}}" method="post">
                         @csrf
                         <input name="id" class="form-control" value="{{$item->id}}" hidden>
@@ -71,34 +72,34 @@
 
                                         <div class="product-option">
                                             <div class="option">
-                                                <div class="option-label">Stock:</div>
+                                                <div class="option-label">Existencias:</div>
                                                 <div class="option-input">
                                                     <input type="text" class="form-control" value="{{$item->Existencias_actuales}}" readonly>
                                                 </div>
                                             </div>
                                             <div class="option">
-                                                <div class="option-label">Precio unitario</div>
+                                                <div class="option-label">Precio unitario:</div>
                                                 <div class="option-input">
                                                     <input type="text" class="form-control" value="{{$item->Precio_unitario}} $" readonly>
                                                 </div>
                                             </div>
                                             <div class="option">
-                                                <div class="option-label">Cantidad</div>
+                                                <div class="option-label">Cantidad:</div>
                                                 <div class="option-input">
-                                                    <input name="Cantidad" type="text" class="form-control" value="" oninput="mostrar('{{$item->id}}','{{$item->Precio_unitario}}',this.value)">
+                                                    <input name="Cantidad" type="text" class="form-control" value="" oninput="mostrar('{{$item->id}}','{{$item->Precio_unitario}}',this.value)" readonly>
                                                 </div>
                                             </div>
                                             <div class="option">
-                                                <div class="option-label">Total</div>
+                                                <div class="option-label">Total:</div>
                                                 <div class="option-input">
-                                                    <input id="{{$item->id}}" type="text" value="" readonly> $
+                                                    $ <input id="{{$item->id}}" type="text" value="0" readonly>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="product-action">
                                         <br>
-                                        <input type="submit" name="btn" class="btn btn-success " value="Añadir al carrito">
+
 
                                     </div>
                                 </div>
@@ -106,6 +107,61 @@
                         </div>
                     </form>
                 </div>
+
+                @else
+                <div class="col-3  p-4 mt-4 text-center">
+                    <h1 style="visibility: hidden">Actualmente sin existencias</h1>
+                    <form id="Añadir" action="{{route('cart.add')}}" method="post">
+                        @csrf
+                        <input name="id" class="form-control" value="{{$item->id}}" hidden>
+                        <div class="pos-stock-product">
+                            <div class="pos-stock-product-container">
+                                <div class="product">
+                                    <div class="product-img">
+                                        <div class="img" style="background-image: url(../assets/img/pos/product-1.jpg)"></div>
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="title">{{$item->Nombre_del_producto}}</div>
+
+
+                                        <div class="product-option">
+                                            <div class="option">
+                                                <div class="option-label">Existencias:</div>
+                                                <div class="option-input">
+                                                    <input type="text" class="form-control" value="{{$item->Existencias_actuales}}" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="option">
+                                                <div class="option-label">Precio unitario:</div>
+                                                <div class="option-input">
+                                                    <input type="text" class="form-control" value="{{$item->Precio_unitario}} $" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="option">
+                                                <div class="option-label">Cantidad:</div>
+                                                <div class="option-input">
+                                                    <input name="Cantidad" type="text" class="form-control" value="" oninput="mostrar('{{$item->id}}','{{$item->Precio_unitario}}',this.value)">
+                                                </div>
+                                            </div>
+                                            <div class="option">
+                                                <div class="option-label">Total:</div>
+                                                <div class="option-input">
+                                                    $ <input id="{{$item->id}}" type="text" value="" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-action">
+                                        <br>
+                                        <input type="submit" name="btn" class="btn btn-success " value="Agregar producto">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                @endif
                 @endforeach
 
             </div>
